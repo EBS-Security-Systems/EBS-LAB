@@ -1,0 +1,76 @@
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    runs-on: windows-latest
+
+    env:
+      Solution_Name: EBS-LAB.sln                         # Nome da solução
+      Test_Project_Path: EBS-LAB\EBS-LAB.csproj          # Caminho do projeto de testes
+      Wap_Project_Directory: your-wap-project-directory-name  # Caminho do diretório do projeto de empacotamento
+      Wap_Project_Path: your-wap-project-path             # Caminho do projeto WAP (empacotamento)
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    # Instalar .NET Core
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    # Adicionar MSBuild ao PATH
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v2
+
+    # Executar os testes
+    - name: Execute unit tests
+      run: dotnet test
+
+    # Restaurar a solução
+    - name: Restore the application
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    # Etapa comentada: Decodificação do arquivo pfx (não necessária se não for assinar o build)
+    # - name: Decode the pfx
+    #   run: |
+    #     $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
+    #     $certificatePath = Join-Path -Path $env:Wap_Project_Directory -ChildPath GitHubActionsWorkflow.pfx
+    #     [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
+
+    # Criar o pacote do aplicativo (sem assinatura)
+    - name: Create the app package
+      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle
+      env:
+        Appx_Bundle: Always
+        Appx_Bundle_Platforms: x86|x64
+        Appx_Package_Build_Mode: StoreUpload
+        Configuration: ${{ matrix.configuration }}
+
+    # Etapa comentada: Remover o arquivo pfx (não necessário se não for assinado)
+    # - name: Remove the pfx
+    #   run: Remove-Item -path $env:Wap_Project_Directory\GitHubActionsWorkflow.pfx
+
+    # Carregar o pacote MSIX como artefato
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: MSIX Package
+        path: ${{ env.Wap_Project_Directory }}\AppPackages
