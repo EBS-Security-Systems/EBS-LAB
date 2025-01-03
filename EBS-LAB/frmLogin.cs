@@ -56,8 +56,8 @@ namespace EBS_LAB
             string user = txtUser.Text;
             string pass = txtPassword.Text;
 
-            // URL do seu script PHP
-            string url = "https://web.ebs-systems.epizy.com/login/login.php";
+            // URL da API
+            string url = "https://ebs-web-auth.vercel.app/login";
 
             using (HttpClient client = new HttpClient())
             {
