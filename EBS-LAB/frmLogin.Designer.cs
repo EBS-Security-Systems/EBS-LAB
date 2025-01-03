@@ -34,7 +34,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             label2 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
+            txtPassword = new MaskedTextBox();
             btnSingUp = new Button();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
@@ -49,16 +49,16 @@
             // btnLogin
             // 
             btnLogin.Cursor = Cursors.Hand;
-            btnLogin.Dock = DockStyle.Right;
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Consolas", 15.75F);
             btnLogin.ForeColor = Color.FromArgb(0, 192, 0);
             btnLogin.Location = new Point(263, 0);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(255, 63);
+            btnLogin.Size = new Size(243, 51);
             btnLogin.TabIndex = 0;
             btnLogin.Text = "LOGIN";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             btnLogin.MouseEnter += btnLogin_MouseEnter;
             btnLogin.MouseLeave += btnLogin_MouseLeave;
             // 
@@ -79,7 +79,7 @@
             tableLayoutPanel1.Controls.Add(txtUser, 1, 0);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
-            tableLayoutPanel1.Controls.Add(maskedTextBox1, 1, 1);
+            tableLayoutPanel1.Controls.Add(txtPassword, 1, 1);
             tableLayoutPanel1.Location = new Point(29, 97);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -112,29 +112,29 @@
             label2.TabIndex = 4;
             label2.Text = "Senha";
             // 
-            // maskedTextBox1
+            // txtPassword
             // 
-            maskedTextBox1.Dock = DockStyle.Fill;
-            maskedTextBox1.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            maskedTextBox1.Location = new Point(114, 41);
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.PasswordChar = '�';
-            maskedTextBox1.Size = new Size(344, 32);
-            maskedTextBox1.TabIndex = 5;
+            txtPassword.Dock = DockStyle.Fill;
+            txtPassword.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Location = new Point(114, 41);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '�';
+            txtPassword.Size = new Size(344, 32);
+            txtPassword.TabIndex = 5;
             // 
             // btnSingUp
             // 
             btnSingUp.Cursor = Cursors.Hand;
-            btnSingUp.Dock = DockStyle.Left;
             btnSingUp.FlatStyle = FlatStyle.Popup;
             btnSingUp.Font = new Font("Consolas", 15.75F);
             btnSingUp.ForeColor = Color.FromArgb(0, 192, 0);
-            btnSingUp.Location = new Point(0, 0);
+            btnSingUp.Location = new Point(12, 0);
             btnSingUp.Name = "btnSingUp";
-            btnSingUp.Size = new Size(255, 63);
+            btnSingUp.Size = new Size(243, 51);
             btnSingUp.TabIndex = 5;
             btnSingUp.Text = "REGISTRO";
             btnSingUp.UseVisualStyleBackColor = true;
+            btnSingUp.Click += btnSingUp_Click;
             btnSingUp.MouseEnter += btnSingUp_MouseEnter;
             btnSingUp.MouseLeave += btnSingUp_MouseLeave;
             // 
@@ -157,7 +157,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // label3
             // 
@@ -219,7 +218,7 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label3;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox txtPassword;
         private PictureBox pictureBox2;
     }
 }
