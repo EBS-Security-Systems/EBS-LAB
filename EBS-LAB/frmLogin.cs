@@ -117,24 +117,27 @@ namespace EBS_LAB
         
                     // Lê a resposta da API
                     string responseContent = await response.Content.ReadAsStringAsync();
-        
-                    // Se a resposta for de sucesso
-                    if (response.IsSuccessStatusCode)
+
+
+                    // Verifica se a resposta contém "success"
+                    if (responseContent.Contains("success"))
                     {
-                        // Verifica se a resposta contém "success"
-                        if (responseContent.Contains("success"))
-                        {
-                            MessageBox.Show("Login bem-sucedido!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erro: " + responseContent);
-                        }
+                        MessageBox.Show("Login bem-sucedido!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro: " + responseContent);
+                    }
+
+                    
+                    /*// Se a resposta for de sucesso
+                    if (response.IsSuccessStatusCode)
+                    {                        
                     }
                     else
                     {
                         MessageBox.Show("Erro ao conectar com a API");
-                    }
+                    }*/
                 }
                 catch (Exception ex)
                 {
