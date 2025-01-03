@@ -106,7 +106,7 @@ namespace EBS_LAB
             string pass = txtPassword.Text;
         
             // URL do PHP com parâmetros GET
-            string url = $"https://ebs-web-auth.vercel.app/login?user={Uri.EscapeDataString(user)}&pwd={Uri.EscapeDataString(pass)}";
+            string url = $"https://web.ebs-systems.epizy.com/login/login.php?user={Uri.EscapeDataString(user)}&pwd={Uri.EscapeDataString(pass)}";
         
             using (HttpClient client = new HttpClient())
             {
