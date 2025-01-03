@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             btnLogin = new Button();
             txtUser = new TextBox();
-            txtPassword = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             label2 = new Label();
+            maskedTextBox1 = new MaskedTextBox();
             btnSingUp = new Button();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
@@ -67,24 +67,15 @@
             txtUser.Size = new Size(344, 32);
             txtUser.TabIndex = 1;
             // 
-            // txtPassword
-            // 
-            txtPassword.Dock = DockStyle.Fill;
-            txtPassword.Font = new Font("Consolas", 15.75F);
-            txtPassword.Location = new Point(114, 41);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(344, 32);
-            txtPassword.TabIndex = 2;
-            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.29501F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75.70499F));
-            tableLayoutPanel1.Controls.Add(txtPassword, 1, 1);
             tableLayoutPanel1.Controls.Add(txtUser, 1, 0);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
+            tableLayoutPanel1.Controls.Add(maskedTextBox1, 1, 1);
             tableLayoutPanel1.Location = new Point(29, 97);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -116,6 +107,16 @@
             label2.Size = new Size(105, 43);
             label2.TabIndex = 4;
             label2.Text = "Senha";
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Dock = DockStyle.Fill;
+            maskedTextBox1.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            maskedTextBox1.Location = new Point(114, 41);
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.PasswordChar = '�';
+            maskedTextBox1.Size = new Size(344, 32);
+            maskedTextBox1.TabIndex = 5;
             // 
             // btnSingUp
             // 
@@ -154,11 +155,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Verdana", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Tahoma", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(0, 192, 0);
             label3.Location = new Point(142, 16);
             label3.Name = "label3";
-            label3.Size = new Size(301, 64);
+            label3.Size = new Size(264, 66);
             label3.TabIndex = 9;
             label3.Text = "EBS-LAB\r\nLog-in com EBS WEB";
             // 
@@ -176,6 +177,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "frmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EBS-LAB - Login (EBS-WEB)";
             Load += frmLogin_Load;
             tableLayoutPanel1.ResumeLayout(false);
@@ -190,7 +192,6 @@
 
         private Button btnLogin;
         private TextBox txtUser;
-        private TextBox txtPassword;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
         private Label label2;
@@ -198,5 +199,6 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label3;
+        private MaskedTextBox maskedTextBox1;
     }
 }
