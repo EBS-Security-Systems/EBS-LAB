@@ -1,3 +1,5 @@
+# Este workflow funciona mas manda pros artefatos a aplicação em .NET v8.0 no lugar de .NET v7.0
+
 name: .NET Core Desktop Build v7.0
 
 on:
