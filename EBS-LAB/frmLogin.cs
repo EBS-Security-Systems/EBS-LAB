@@ -51,7 +51,7 @@ namespace EBS_LAB
             Process.Start(new ProcessStartInfo(@"https://web.ebs-systems.epizy.com/singup") { UseShellExecute = true });
         }
 
-        private async void btnLogin_Click(object sender, EventArgs e)
+       /* private async void btnLogin_Click(object sender, EventArgs e)
         {
             string user = txtUser.Text;
             string pass = txtPassword.Text;
@@ -98,7 +98,51 @@ namespace EBS_LAB
                     MessageBox.Show("Erro: " + ex.Message);
                 }
             }
+        }*/
+
+        private async void btnLogin_Click(object sender, EventArgs e)
+        {
+            string user = txtUser.Text;
+            string pass = txtPassword.Text;
+        
+            // URL do PHP com parâmetros GET
+            string url = $"https://ebs-web-auth.vercel.app/login?user={Uri.EscapeDataString(user)}&pwd={Uri.EscapeDataString(pass)}";
+        
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    // Envia a requisição GET para o PHP
+                    HttpResponseMessage response = await client.GetAsync(url);
+        
+                    // Lê a resposta da API
+                    string responseContent = await response.Content.ReadAsStringAsync();
+        
+                    // Se a resposta for de sucesso
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Verifica se a resposta contém "success"
+                        if (responseContent.Contains("success"))
+                        {
+                            MessageBox.Show("Login bem-sucedido!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro: " + responseContent);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao conectar com a API");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+            }
         }
+
     
     }
 }
