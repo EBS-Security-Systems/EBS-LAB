@@ -18,7 +18,8 @@ jobs:
 
     env:
       Solution_Name: EBS-LAB.sln                         # Nome da solução .NET Core
-      Test_Project_Path: EBS-LAB\EBS-LAB.csproj           # Caminho para o projeto de testes, se houver
+      Test_Project_Path: EBS-LAB\EBS-LAB.csproj          # Caminho para o projeto de testes, se houver
+      Project_Directory: EBS-LAB                         # Diretório do projeto para correção de caminho
 
     steps:
     - name: Checkout
@@ -59,4 +60,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Build Artifacts
-        path: ${{ env.Solution_Name }}\bin\${{ matrix.configuration }}
+        path: ${{ env.Project_Directory }}\bin\${{ matrix.configuration }}
