@@ -21,5 +21,30 @@ namespace EBS_LAB
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogin.BackColor = Color.FromArgb(0, 100, 0);
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogin.BackColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void btnSingUp_MouseEnter(object sender, EventArgs e)
+        {
+            btnSingUp.BackColor = Color.FromArgb(0, 100, 0);
+        }
+
+        private void btnSingUp_MouseLeave(object sender, EventArgs e)
+        {
+            btnSingUp.BackColor = Color.FromArgb(0, 0, 0);
+        }
     }
 }

@@ -79,5 +79,15 @@ namespace EBS_LAB.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_EBS_WEB {
+            get {
+                object obj = ResourceManager.GetObject("Logo EBS-WEB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

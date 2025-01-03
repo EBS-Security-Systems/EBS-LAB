@@ -39,9 +39,11 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label3 = new Label();
+            pictureBox2 = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnLogin
@@ -57,6 +59,8 @@
             btnLogin.TabIndex = 0;
             btnLogin.Text = "LOGIN";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.MouseEnter += btnLogin_MouseEnter;
+            btnLogin.MouseLeave += btnLogin_MouseLeave;
             // 
             // txtUser
             // 
@@ -131,6 +135,8 @@
             btnSingUp.TabIndex = 5;
             btnSingUp.Text = "REGISTRO";
             btnSingUp.UseVisualStyleBackColor = true;
+            btnSingUp.MouseEnter += btnSingUp_MouseEnter;
+            btnSingUp.MouseLeave += btnSingUp_MouseLeave;
             // 
             // panel1
             // 
@@ -145,23 +151,35 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Logo_EBS_LAB;
-            pictureBox1.Location = new Point(14, 12);
+            pictureBox1.Location = new Point(29, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(123, 82);
+            pictureBox1.Size = new Size(93, 82);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(0, 192, 0);
-            label3.Location = new Point(142, 16);
+            label3.Location = new Point(125, 12);
             label3.Name = "label3";
             label3.Size = new Size(264, 66);
             label3.TabIndex = 9;
             label3.Text = "EBS-LAB\r\nLog-in com EBS WEB";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.Logo_EBS_WEB;
+            pictureBox2.Location = new Point(397, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(93, 82);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
             // 
             // frmLogin
             // 
@@ -169,6 +187,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(518, 247);
+            Controls.Add(pictureBox2);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
             Controls.Add(tableLayoutPanel1);
@@ -184,6 +203,7 @@
             tableLayoutPanel1.PerformLayout();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,5 +220,6 @@
         private PictureBox pictureBox1;
         private Label label3;
         private MaskedTextBox maskedTextBox1;
+        private PictureBox pictureBox2;
     }
 }
