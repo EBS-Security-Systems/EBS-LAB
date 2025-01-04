@@ -1,9 +1,9 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Data;*/
 using System.Diagnostics;
-using System.Net.Http;
+/*using System.Net.Http;
 using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
+*/
 namespace EBS_LAB
 {
     public partial class frmLogin : Form
