@@ -43,6 +43,7 @@
             btnLogin = new ToolStripButton();
             btnEbsCli = new ToolStripButton();
             btnExitEbsWeb = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
             statusStripPrincipal.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -73,12 +74,12 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Left;
-            tableLayoutPanel1.Location = new Point(0, 49);
+            tableLayoutPanel1.Location = new Point(0, 50);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(74, 379);
+            tableLayoutPanel1.Size = new Size(74, 378);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -134,10 +135,11 @@
             // 
             // toolStripPrincipal
             // 
-            toolStripPrincipal.Items.AddRange(new ToolStripItem[] { btnLogin, btnEbsCli, btnExitEbsWeb });
+            toolStripPrincipal.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            toolStripPrincipal.Items.AddRange(new ToolStripItem[] { btnLogin, btnExitEbsWeb, btnEbsCli, toolStripSeparator1 });
             toolStripPrincipal.Location = new Point(0, 24);
             toolStripPrincipal.Name = "toolStripPrincipal";
-            toolStripPrincipal.Size = new Size(800, 25);
+            toolStripPrincipal.Size = new Size(800, 26);
             toolStripPrincipal.TabIndex = 0;
             // 
             // btnLogin
@@ -145,7 +147,7 @@
             btnLogin.Image = Properties.Resources.Logo_EBS_WEB;
             btnLogin.ImageTransparentColor = Color.Magenta;
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(136, 22);
+            btnLogin.Size = new Size(156, 23);
             btnLogin.Text = "Entrar com EBS-WEB";
             btnLogin.Click += btnLogin_Click;
             // 
@@ -154,7 +156,7 @@
             btnEbsCli.Image = Properties.Resources.PowerShell_5_0_icon;
             btnEbsCli.ImageTransparentColor = Color.Magenta;
             btnEbsCli.Name = "btnEbsCli";
-            btnEbsCli.Size = new Size(97, 22);
+            btnEbsCli.Size = new Size(111, 23);
             btnEbsCli.Text = "Abrir EBS-CLI";
             // 
             // btnExitEbsWeb
@@ -162,9 +164,14 @@
             btnExitEbsWeb.Image = Properties.Resources.Logo_EBS_WEB;
             btnExitEbsWeb.ImageTransparentColor = Color.Magenta;
             btnExitEbsWeb.Name = "btnExitEbsWeb";
-            btnExitEbsWeb.Size = new Size(114, 22);
+            btnExitEbsWeb.Size = new Size(131, 23);
             btnExitEbsWeb.Text = "Sair do EBS-WEB";
             btnExitEbsWeb.Visible = false;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 26);
             // 
             // frmPrincipal
             // 
@@ -209,5 +216,6 @@
         private ToolStripMenuItem salvarComoToolStripMenuItem;
         private ToolStripButton btnEbsCli;
         private ToolStripButton btnExitEbsWeb;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }

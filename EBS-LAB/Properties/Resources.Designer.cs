@@ -63,16 +63,6 @@ namespace EBS_LAB.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cadeado {
-            get {
-                object obj = ResourceManager.GetObject("Cadeado", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap IconeDoSite {
             get {
                 object obj = ResourceManager.GetObject("IconeDoSite", resourceCulture);
@@ -93,9 +83,9 @@ namespace EBS_LAB.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo_EBS_LAB1 {
+        internal static System.Drawing.Bitmap Logo_EBS_WEB {
             get {
-                object obj = ResourceManager.GetObject("Logo EBS-LAB1", resourceCulture);
+                object obj = ResourceManager.GetObject("Logo EBS-WEB", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +93,9 @@ namespace EBS_LAB.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo_EBS_WEB {
+        internal static System.Drawing.Bitmap NewEBSLogo {
             get {
-                object obj = ResourceManager.GetObject("Logo EBS-WEB", resourceCulture);
+                object obj = ResourceManager.GetObject("NewEBSLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
