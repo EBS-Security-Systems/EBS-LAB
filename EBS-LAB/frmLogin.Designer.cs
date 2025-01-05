@@ -150,7 +150,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Logo_EBS_LAB;
+            pictureBox1.Image = Properties.Resources.Logo_EBS_LAB1;
             pictureBox1.Location = new Point(29, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(93, 82);

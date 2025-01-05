@@ -16,9 +16,11 @@ namespace EBS_LAB
 {
     public partial class frmLogin : Form
     {
+        public string User { get; set; }
+
         public frmLogin()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void btnLogin_MouseEnter(object sender, EventArgs e)
@@ -50,7 +52,11 @@ namespace EBS_LAB
         {
             string user = txtUser.Text;
             string pass = txtPassword.Text;
-        
+
+            User = "";
+
+            this.DialogResult = DialogResult.OK;
+
             // URL do PHP com parâmetros GET
             string url = $"https://web.ebs-systems.epizy.com/login/login.php?user={Uri.EscapeDataString(user)}&pwd={Uri.EscapeDataString(pass)}";
         
@@ -90,6 +96,8 @@ namespace EBS_LAB
                     MessageBox.Show("Erro: " + ex.Message);
                 }
             }
+
+            this.Close();
         }
 
     
