@@ -62,7 +62,7 @@ namespace EBS_LAB
                 MessageBox.Show("Por favor, preencha o usuário e a senha.");
                 return;
             }
-            
+
 
             // URL da API Flask (substitua pela URL correta da sua API Flask)
             string url = "http://ebs-web-auth.vercel.app/login"; // Ou o endpoint correto de login da API Flask
@@ -97,20 +97,38 @@ namespace EBS_LAB
                         // Agora podemos acessar o nickname retornado pela API
                         string nickname = Encoding.UTF8.GetString(Convert.FromBase64String(loginResponse.Nickname));
 
-                        MessageBox.Show($"Seja bem vindo {nickname}", "EBS-WEB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Seja bem vindo {nickname}", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.User = nickname;
                         this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
-                        MessageBox.Show("Erro: " + responseContent);
+                        var error_Response = JsonSerializer.Deserialize<ErrorResponse>(responseContent);
+                        int error_code = int.Parse(error_Response.Error);
+                        string error_Message = "";
+                        switch (error_code)
+                        {
+                            case 1:
+                                error_Message = "Senha incorreta!";
+                                break;
+                            case 2:
+                                error_Message = "Usuário inativo!";
+                                break;
+                            case 3:
+                                error_Message = "Usuário não encontrado!";
+                                break;
+                            default:
+                                error_Message = responseContent;
+                                break;
+                        }
+                        MessageBox.Show(error_Message, "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 catch (Exception ex)
                 {
                     // Exibe a mensagem de erro caso haja falha na requisição
                     MessageBox.Show("Erro: " + ex.Message, "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }                
+                }
             }
             this.Close(); // Fecha o formulário após sucesso
         }
@@ -123,6 +141,12 @@ namespace EBS_LAB
 
             [JsonPropertyName("nickname")]
             public string Nickname { get; set; }
+        }
+
+        public class ErrorResponse
+        {
+            [JsonPropertyName("error")]
+            public string Error { get; set; }
         }
     }
 }
