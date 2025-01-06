@@ -32,7 +32,7 @@
             statusStripPrincipal = new StatusStrip();
             sLUser = new ToolStripStatusLabel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
+            pbLogo = new PictureBox();
             menuStripPrincipal = new MenuStrip();
             arquivoToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem = new ToolStripMenuItem();
@@ -41,14 +41,25 @@
             salvarComoToolStripMenuItem = new ToolStripMenuItem();
             toolStripPrincipal = new ToolStrip();
             btnLogin = new ToolStripButton();
-            btnEbsCli = new ToolStripButton();
             btnExitEbsWeb = new ToolStripButton();
+            btnEbsCli = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            tabPage3 = new TabPage();
+            tabPage4 = new TabPage();
+            splitContainerPrincipal = new SplitContainer();
+            txtPrincipal = new TextBox();
             statusStripPrincipal.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             menuStripPrincipal.SuspendLayout();
             toolStripPrincipal.SuspendLayout();
+            tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).BeginInit();
+            splitContainerPrincipal.Panel1.SuspendLayout();
+            splitContainerPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // statusStripPrincipal
@@ -72,7 +83,7 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(pbLogo, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Left;
             tableLayoutPanel1.Location = new Point(0, 50);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -82,16 +93,18 @@
             tableLayoutPanel1.Size = new Size(74, 378);
             tableLayoutPanel1.TabIndex = 1;
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Image = Properties.Resources.Logo_EBS_LAB;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(68, 65);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pbLogo.Cursor = Cursors.Hand;
+            pbLogo.Dock = DockStyle.Top;
+            pbLogo.Image = Properties.Resources.Logo_EBS_LAB;
+            pbLogo.Location = new Point(3, 3);
+            pbLogo.Name = "pbLogo";
+            pbLogo.Size = new Size(68, 65);
+            pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pbLogo.TabIndex = 0;
+            pbLogo.TabStop = false;
+            pbLogo.Click += pbLogo_Click;
             // 
             // menuStripPrincipal
             // 
@@ -151,14 +164,6 @@
             btnLogin.Text = "Entrar com EBS-WEB";
             btnLogin.Click += btnLogin_Click;
             // 
-            // btnEbsCli
-            // 
-            btnEbsCli.Image = Properties.Resources.PowerShell_5_0_icon;
-            btnEbsCli.ImageTransparentColor = Color.Magenta;
-            btnEbsCli.Name = "btnEbsCli";
-            btnEbsCli.Size = new Size(111, 23);
-            btnEbsCli.Text = "Abrir EBS-CLI";
-            // 
             // btnExitEbsWeb
             // 
             btnExitEbsWeb.Image = Properties.Resources.Logo_EBS_WEB;
@@ -168,10 +173,96 @@
             btnExitEbsWeb.Text = "Sair do EBS-WEB";
             btnExitEbsWeb.Visible = false;
             // 
+            // btnEbsCli
+            // 
+            btnEbsCli.Image = Properties.Resources.PowerShell_5_0_icon;
+            btnEbsCli.ImageTransparentColor = Color.Magenta;
+            btnEbsCli.Name = "btnEbsCli";
+            btnEbsCli.Size = new Size(111, 23);
+            btnEbsCli.Text = "Abrir EBS-CLI";
+            // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 26);
+            // 
+            // tabControl1
+            // 
+            tabControl1.Alignment = TabAlignment.Bottom;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
+            tabControl1.Dock = DockStyle.Top;
+            tabControl1.Location = new Point(74, 50);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(726, 100);
+            tabControl1.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = SystemColors.Control;
+            tabPage1.Location = new Point(4, 4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(718, 72);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Codificações";
+            // 
+            // tabPage2
+            // 
+            tabPage2.BackColor = SystemColors.Control;
+            tabPage2.Location = new Point(4, 4);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(718, 72);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Criptografia Simétrica";
+            // 
+            // tabPage3
+            // 
+            tabPage3.BackColor = SystemColors.Control;
+            tabPage3.Location = new Point(4, 4);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Size = new Size(718, 72);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Criptografia Assimétrica";
+            // 
+            // tabPage4
+            // 
+            tabPage4.BackColor = SystemColors.Control;
+            tabPage4.Location = new Point(4, 4);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Size = new Size(718, 72);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Hashs";
+            // 
+            // splitContainerPrincipal
+            // 
+            splitContainerPrincipal.Dock = DockStyle.Fill;
+            splitContainerPrincipal.Location = new Point(74, 150);
+            splitContainerPrincipal.Name = "splitContainerPrincipal";
+            splitContainerPrincipal.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainerPrincipal.Panel1
+            // 
+            splitContainerPrincipal.Panel1.Controls.Add(txtPrincipal);
+            splitContainerPrincipal.Size = new Size(726, 278);
+            splitContainerPrincipal.SplitterDistance = 249;
+            splitContainerPrincipal.TabIndex = 4;
+            // 
+            // txtPrincipal
+            // 
+            txtPrincipal.BackColor = Color.Black;
+            txtPrincipal.BorderStyle = BorderStyle.None;
+            txtPrincipal.Dock = DockStyle.Fill;
+            txtPrincipal.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPrincipal.ForeColor = Color.FromArgb(0, 192, 0);
+            txtPrincipal.Location = new Point(0, 0);
+            txtPrincipal.Name = "txtPrincipal";
+            txtPrincipal.Size = new Size(726, 25);
+            txtPrincipal.TabIndex = 0;
             // 
             // frmPrincipal
             // 
@@ -179,6 +270,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(800, 450);
+            Controls.Add(splitContainerPrincipal);
+            Controls.Add(tabControl1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(toolStripPrincipal);
             Controls.Add(menuStripPrincipal);
@@ -191,11 +284,16 @@
             statusStripPrincipal.ResumeLayout(false);
             statusStripPrincipal.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             menuStripPrincipal.ResumeLayout(false);
             menuStripPrincipal.PerformLayout();
             toolStripPrincipal.ResumeLayout(false);
             toolStripPrincipal.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            splitContainerPrincipal.Panel1.ResumeLayout(false);
+            splitContainerPrincipal.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).EndInit();
+            splitContainerPrincipal.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,7 +303,7 @@
         private StatusStrip statusStripPrincipal;
         private ToolStripStatusLabel sLUser;
         private TableLayoutPanel tableLayoutPanel1;
-        private PictureBox pictureBox1;
+        private PictureBox pbLogo;
         private MenuStrip menuStripPrincipal;
         private ToolStripMenuItem arquivoToolStripMenuItem;
         private ToolStrip toolStripPrincipal;
@@ -217,5 +315,12 @@
         private ToolStripButton btnEbsCli;
         private ToolStripButton btnExitEbsWeb;
         private ToolStripSeparator toolStripSeparator1;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private TabPage tabPage3;
+        private TabPage tabPage4;
+        private SplitContainer splitContainerPrincipal;
+        private TextBox txtPrincipal;
     }
 }
