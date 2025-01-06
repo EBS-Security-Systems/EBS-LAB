@@ -1,7 +1,9 @@
+using System.Diagnostics;
+
 namespace EBS_LAB
 {
     public partial class frmPrincipal : Form
-    {        
+    {
         public frmPrincipal()
         {
             InitializeComponent();
@@ -24,7 +26,12 @@ namespace EBS_LAB
                     btnLogin.Visible = false;
                     btnExitEbsWeb.Visible = true;
                 }
-            }                                          
+            }
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {            
+            Process.Start(new ProcessStartInfo(@"https://github.com/EBS-Security-Systems/EBS-LAB") { UseShellExecute = true });
         }
     }
 }

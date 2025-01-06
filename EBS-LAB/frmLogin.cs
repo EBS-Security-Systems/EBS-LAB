@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;*/
 using System.Diagnostics;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text;
 /*using System.Net.Http;
 using System.Drawing;
 using System.Linq;
@@ -19,13 +19,14 @@ namespace EBS_LAB
 {
     public partial class frmLogin : Form
     {
-        public string User { get; private set; }
+        public string User { get; private set; } = "";
 
         public frmLogin()
         {
             InitializeComponent();
         }
 
+        #region Design dos componentes
         private void btnLogin_MouseEnter(object sender, EventArgs e)
         {
             btnLogin.BackColor = Color.FromArgb(0, 100, 0);
@@ -45,6 +46,7 @@ namespace EBS_LAB
         {
             btnSingUp.BackColor = Color.FromArgb(0, 0, 0);
         }
+        #endregion
 
         private void btnSingUp_Click(object sender, EventArgs e)
         {
@@ -59,7 +61,7 @@ namespace EBS_LAB
             // Verificar se os campos de usuário e senha não estão vazios
             if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
             {
-                MessageBox.Show("Por favor, preencha o usuário e a senha.");
+                MessageBox.Show("Por favor, preencha o usuário e a senha.", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
@@ -97,7 +99,7 @@ namespace EBS_LAB
                         // Agora podemos acessar o nickname retornado pela API
                         string nickname = Encoding.UTF8.GetString(Convert.FromBase64String(loginResponse.Nickname));
 
-                        MessageBox.Show($"Seja bem vindo {nickname}", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Seja bem vindo @{nickname}", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.User = nickname;
                         this.DialogResult = DialogResult.OK;
                     }
@@ -133,20 +135,22 @@ namespace EBS_LAB
             this.Close(); // Fecha o formulário após sucesso
         }
 
+        #region Classes de resposta da API
         // Classe para mapear a resposta JSON da API Flask
         public class LoginResponse
         {
             [JsonPropertyName("message")]
-            public string Message { get; set; }
+            public required string Message { get; set; }
 
             [JsonPropertyName("nickname")]
-            public string Nickname { get; set; }
+            public required string Nickname { get; set; }
         }
 
         public class ErrorResponse
         {
             [JsonPropertyName("error")]
-            public string Error { get; set; }
+            public required string Error { get; set; }
         }
+        #endregion
     }
 }
