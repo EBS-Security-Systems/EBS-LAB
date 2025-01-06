@@ -10,21 +10,21 @@ namespace EBS_LAB
         private void btnLogin_Click(object sender, EventArgs e)
         {
             frmLogin login = new frmLogin();
-            login.ShowDialog();
-            string user = login.User;
-                
-
-            if (user == "")
+            if (login.ShowDialog() == DialogResult.OK)
             {
-                sLUser.Text = "Nenhum usuário conectado";
-            }
-            else
-            {
-                sLUser.Text = $"Usuário conectado: {user}";
-                btnLogin.Enabled = false;
-                btnLogin.Visible = false;
-                btnExitEbsWeb.Visible = true;
-            }
+                string user = login.User;
+                if (user == "")
+                {
+                    sLUser.Text = "Nenhum usuário conectado";
+                }
+                else
+                {
+                    sLUser.Text = $"Usuário conectado: @{user}";
+                    btnLogin.Enabled = false;
+                    btnLogin.Visible = false;
+                    btnExitEbsWeb.Visible = true;
+                }
+            }                                          
         }
     }
 }

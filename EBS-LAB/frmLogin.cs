@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;*/
 using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Text;
 /*using System.Net.Http;
 using System.Drawing;
 using System.Linq;
@@ -16,11 +19,11 @@ namespace EBS_LAB
 {
     public partial class frmLogin : Form
     {
-        public string User { get; set; }
+        public string User { get; private set; }
 
         public frmLogin()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void btnLogin_MouseEnter(object sender, EventArgs e)
@@ -46,60 +49,80 @@ namespace EBS_LAB
         private void btnSingUp_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo(@"https://web.ebs-systems.epizy.com/singup") { UseShellExecute = true });
-        }       
+        }
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
             string user = txtUser.Text;
             string pass = txtPassword.Text;
 
-            User = "";
+            // Verificar se os campos de usuário e senha não estão vazios
+            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
+            {
+                MessageBox.Show("Por favor, preencha o usuário e a senha.");
+                return;
+            }
+            
 
-            this.DialogResult = DialogResult.OK;
+            // URL da API Flask (substitua pela URL correta da sua API Flask)
+            string url = "http://ebs-web-auth.vercel.app/login"; // Ou o endpoint correto de login da API Flask
 
-            // URL do PHP com parâmetros GET
-            string url = $"https://web.ebs-systems.epizy.com/login/login.php?user={Uri.EscapeDataString(user)}&pwd={Uri.EscapeDataString(pass)}";
-        
+            // Criar um objeto com os dados para enviar
+            var loginData = new
+            {
+                user = user,
+                pwd = pass
+            };
+
             using (HttpClient client = new HttpClient())
             {
                 try
                 {
-                    // Envia a requisição GET para o PHP
-                    HttpResponseMessage response = await client.GetAsync(url);
-        
+                    // Serializar os dados para JSON
+                    string jsonContent = JsonSerializer.Serialize(loginData);
+                    StringContent content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                    // Enviar a requisição POST para a API Flask
+                    HttpResponseMessage response = await client.PostAsync(url, content);
+
                     // Lê a resposta da API
                     string responseContent = await response.Content.ReadAsStringAsync();
-
 
                     // Verifica se a resposta contém "success"
                     if (responseContent.Contains("success"))
                     {
-                        MessageBox.Show("Login bem-sucedido!");
+                        // Desserializar a resposta JSON para o objeto LoginResponse
+                        var loginResponse = JsonSerializer.Deserialize<LoginResponse>(responseContent);
+
+                        // Agora podemos acessar o nickname retornado pela API
+                        string nickname = Encoding.UTF8.GetString(Convert.FromBase64String(loginResponse.Nickname));
+
+                        MessageBox.Show($"Seja bem vindo {nickname}", "EBS-WEB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.User = nickname;
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
                         MessageBox.Show("Erro: " + responseContent);
                     }
-
-                    
-                    /*// Se a resposta for de sucesso
-                    if (response.IsSuccessStatusCode)
-                    {                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro ao conectar com a API");
-                    }*/
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro: " + ex.Message);
-                }
+                    // Exibe a mensagem de erro caso haja falha na requisição
+                    MessageBox.Show("Erro: " + ex.Message, "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }                
             }
-
-            this.Close();
+            this.Close(); // Fecha o formulário após sucesso
         }
 
-    
+        // Classe para mapear a resposta JSON da API Flask
+        public class LoginResponse
+        {
+            [JsonPropertyName("message")]
+            public string Message { get; set; }
+
+            [JsonPropertyName("nickname")]
+            public string Nickname { get; set; }
+        }
     }
 }
