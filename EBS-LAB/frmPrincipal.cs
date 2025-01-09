@@ -34,7 +34,7 @@ namespace EBS_LAB
                 }
             }
         }
-        
+
         private void btnExitEbsWeb_Click(object sender, EventArgs e)
         {
             user = "";
@@ -44,6 +44,11 @@ namespace EBS_LAB
             btnExitEbsWeb.Visible = false;
 
             MessageBox.Show("Log-off efetuado com sucesso!", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
