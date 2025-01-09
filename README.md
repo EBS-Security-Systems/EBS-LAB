@@ -4,7 +4,7 @@
 
 <h3 align=center> 
   
-  📥 Instave versões de teste nos atefatos em **[Actions](https://github.com/EBS-Security-Systems/EBS-LAB/actions)**
+  📥 Instale versões de teste nos atefatos em **[Actions](https://github.com/EBS-Security-Systems/EBS-LAB/actions)**
 
 </h3>
 
@@ -16,7 +16,9 @@ Você também poderá salvar dados de aplicativo usando sua conta do [**EBS-WEB*
 
 ## Diferencial
 
-A aplicação do **EBS-LAB** diferencia-se do ***[Encryption's Builder Studio](https://thiagosousa81.wordpress.com/ebs)*** em utilizar de um serviço em constante desenvolvimento para gerar encriptações. Isso permite um trabalho Open-Source muito mais organizado que com a aplicação anterior
+A aplicação do **EBS-LAB** diferencia-se do ***[Encryption's Builder Studio](https://thiagosousa81.wordpress.com/ebs)*** em utilizar de um serviço em constante desenvolvimento para gerar encriptações. Isso permite um trabalho Open-Source muito mais organizado que com a aplicação anterior. 
+
+Uma nova funcionalidade é que você poderá implementar seu próprio serviço de encriptação na plataforma para testes.
 
 ## 🧑‍💻 Contribua 💻
 
