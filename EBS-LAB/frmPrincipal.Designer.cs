@@ -172,6 +172,7 @@
             btnExitEbsWeb.Size = new Size(131, 23);
             btnExitEbsWeb.Text = "Sair do EBS-WEB";
             btnExitEbsWeb.Visible = false;
+            btnExitEbsWeb.Click += btnExitEbsWeb_Click;
             // 
             // btnEbsCli
             // 

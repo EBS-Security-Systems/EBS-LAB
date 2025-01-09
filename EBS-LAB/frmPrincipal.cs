@@ -4,9 +4,15 @@ namespace EBS_LAB
 {
     public partial class frmPrincipal : Form
     {
+        public string user = "";
         public frmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(@"https://github.com/EBS-Security-Systems/EBS-LAB") { UseShellExecute = true });
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -14,7 +20,7 @@ namespace EBS_LAB
             frmLogin login = new frmLogin();
             if (login.ShowDialog() == DialogResult.OK)
             {
-                string user = login.User;
+                user = login.User;
                 if (user == "")
                 {
                     sLUser.Text = "Nenhum usuário conectado";
@@ -28,10 +34,16 @@ namespace EBS_LAB
                 }
             }
         }
+        
+        private void btnExitEbsWeb_Click(object sender, EventArgs e)
+        {
+            user = "";
+            sLUser.Text = "Nenhum usuário conectado";
+            btnLogin.Enabled = true;
+            btnLogin.Visible = true;
+            btnExitEbsWeb.Visible = false;
 
-        private void pbLogo_Click(object sender, EventArgs e)
-        {            
-            Process.Start(new ProcessStartInfo(@"https://github.com/EBS-Security-Systems/EBS-LAB") { UseShellExecute = true });
+            MessageBox.Show("Log-off efetuado com sucesso!", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
