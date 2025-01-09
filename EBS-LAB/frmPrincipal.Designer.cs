@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             statusStripPrincipal = new StatusStrip();
             sLUser = new ToolStripStatusLabel();
+            lblEngine = new ToolStripStatusLabel();
             tableLayoutPanel1 = new TableLayoutPanel();
             pbLogo = new PictureBox();
             menuStripPrincipal = new MenuStrip();
@@ -40,6 +41,11 @@
             abrirToolStripMenuItem = new ToolStripMenuItem();
             salvarToolStripMenuItem = new ToolStripMenuItem();
             salvarComoToolStripMenuItem = new ToolStripMenuItem();
+            opçõesToolStripMenuItem = new ToolStripMenuItem();
+            motoresDeEncriptaçãoToolStripMenuItem = new ToolStripMenuItem();
+            eBSRNclassicToolStripMenuItem = new ToolStripMenuItem();
+            eBSCSPToolStripMenuItem = new ToolStripMenuItem();
+            eBSCLIToolStripMenuItem = new ToolStripMenuItem();
             toolStripPrincipal = new ToolStrip();
             btnLogin = new ToolStripButton();
             btnExitEbsWeb = new ToolStripButton();
@@ -48,6 +54,9 @@
             tabControlPrincipal = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            btnEncrypt_S = new Button();
+            btnDecrypt_S = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             label3 = new Label();
             txtIV = new TextBox();
@@ -58,10 +67,8 @@
             tabPage3 = new TabPage();
             tabPage4 = new TabPage();
             splitContainerPrincipal = new SplitContainer();
+            textBox1 = new TextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            tableLayoutPanel3 = new TableLayoutPanel();
-            btnEncrypt_S = new Button();
-            btnDecrypt_S = new Button();
             statusStripPrincipal.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
@@ -69,15 +76,16 @@
             toolStripPrincipal.SuspendLayout();
             tabControlPrincipal.SuspendLayout();
             tabPage2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).BeginInit();
+            splitContainerPrincipal.Panel1.SuspendLayout();
             splitContainerPrincipal.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // statusStripPrincipal
             // 
-            statusStripPrincipal.Items.AddRange(new ToolStripItem[] { sLUser });
+            statusStripPrincipal.Items.AddRange(new ToolStripItem[] { sLUser, lblEngine });
             statusStripPrincipal.Location = new Point(0, 428);
             statusStripPrincipal.Name = "statusStripPrincipal";
             statusStripPrincipal.Size = new Size(800, 22);
@@ -91,6 +99,13 @@
             sLUser.Name = "sLUser";
             sLUser.Size = new Size(155, 17);
             sLUser.Text = "Nenhum usuário conectado";
+            // 
+            // lblEngine
+            // 
+            lblEngine.BackColor = SystemColors.Control;
+            lblEngine.Name = "lblEngine";
+            lblEngine.Size = new Size(239, 17);
+            lblEngine.Text = "Motor de Encriptação: (nenhum conectado)";
             // 
             // tableLayoutPanel1
             // 
@@ -121,7 +136,7 @@
             // 
             // menuStripPrincipal
             // 
-            menuStripPrincipal.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem });
+            menuStripPrincipal.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, opçõesToolStripMenuItem });
             menuStripPrincipal.Location = new Point(0, 0);
             menuStripPrincipal.Name = "menuStripPrincipal";
             menuStripPrincipal.Size = new Size(800, 24);
@@ -158,6 +173,38 @@
             salvarComoToolStripMenuItem.Name = "salvarComoToolStripMenuItem";
             salvarComoToolStripMenuItem.Size = new Size(139, 22);
             salvarComoToolStripMenuItem.Text = "Salvar como";
+            // 
+            // opçõesToolStripMenuItem
+            // 
+            opçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { motoresDeEncriptaçãoToolStripMenuItem });
+            opçõesToolStripMenuItem.Name = "opçõesToolStripMenuItem";
+            opçõesToolStripMenuItem.Size = new Size(59, 20);
+            opçõesToolStripMenuItem.Text = "Opções";
+            // 
+            // motoresDeEncriptaçãoToolStripMenuItem
+            // 
+            motoresDeEncriptaçãoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { eBSRNclassicToolStripMenuItem, eBSCSPToolStripMenuItem, eBSCLIToolStripMenuItem });
+            motoresDeEncriptaçãoToolStripMenuItem.Name = "motoresDeEncriptaçãoToolStripMenuItem";
+            motoresDeEncriptaçãoToolStripMenuItem.Size = new Size(199, 22);
+            motoresDeEncriptaçãoToolStripMenuItem.Text = "Motores de Encriptação";
+            // 
+            // eBSRNclassicToolStripMenuItem
+            // 
+            eBSRNclassicToolStripMenuItem.Name = "eBSRNclassicToolStripMenuItem";
+            eBSRNclassicToolStripMenuItem.Size = new Size(159, 22);
+            eBSRNclassicToolStripMenuItem.Text = "EBS-RN (classic)";
+            // 
+            // eBSCSPToolStripMenuItem
+            // 
+            eBSCSPToolStripMenuItem.Name = "eBSCSPToolStripMenuItem";
+            eBSCSPToolStripMenuItem.Size = new Size(159, 22);
+            eBSCSPToolStripMenuItem.Text = "EBS-CSP";
+            // 
+            // eBSCLIToolStripMenuItem
+            // 
+            eBSCLIToolStripMenuItem.Name = "eBSCLIToolStripMenuItem";
+            eBSCLIToolStripMenuItem.Size = new Size(159, 22);
+            eBSCLIToolStripMenuItem.Text = "EBS-CLI (beta)";
             // 
             // toolStripPrincipal
             // 
@@ -236,11 +283,48 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Criptografia Simétrica";
             // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.AutoScroll = true;
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel3.Controls.Add(btnEncrypt_S, 0, 0);
+            tableLayoutPanel3.Controls.Add(btnDecrypt_S, 0, 1);
+            tableLayoutPanel3.Dock = DockStyle.Right;
+            tableLayoutPanel3.Location = new Point(572, 3);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 2;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Size = new Size(143, 91);
+            tableLayoutPanel3.TabIndex = 1;
+            // 
+            // btnEncrypt_S
+            // 
+            btnEncrypt_S.Dock = DockStyle.Fill;
+            btnEncrypt_S.Location = new Point(3, 3);
+            btnEncrypt_S.Name = "btnEncrypt_S";
+            btnEncrypt_S.Size = new Size(137, 39);
+            btnEncrypt_S.TabIndex = 0;
+            btnEncrypt_S.Text = "Criptografar";
+            btnEncrypt_S.UseVisualStyleBackColor = true;
+            // 
+            // btnDecrypt_S
+            // 
+            btnDecrypt_S.Dock = DockStyle.Fill;
+            btnDecrypt_S.Location = new Point(3, 48);
+            btnDecrypt_S.Name = "btnDecrypt_S";
+            btnDecrypt_S.Size = new Size(137, 40);
+            btnDecrypt_S.TabIndex = 1;
+            btnDecrypt_S.Text = "Descriptografar";
+            btnDecrypt_S.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.2990646F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75.7009354F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.64343F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 79.35657F));
             tableLayoutPanel2.Controls.Add(label3, 0, 2);
             tableLayoutPanel2.Controls.Add(txtIV, 1, 1);
             tableLayoutPanel2.Controls.Add(label2, 0, 1);
@@ -264,7 +348,7 @@
             label3.Dock = DockStyle.Fill;
             label3.Location = new Point(3, 60);
             label3.Name = "label3";
-            label3.Size = new Size(84, 31);
+            label3.Size = new Size(70, 31);
             label3.TabIndex = 4;
             label3.Text = "Algoritmo";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -272,9 +356,9 @@
             // txtIV
             // 
             txtIV.Dock = DockStyle.Fill;
-            txtIV.Location = new Point(93, 33);
+            txtIV.Location = new Point(79, 33);
             txtIV.Name = "txtIV";
-            txtIV.Size = new Size(277, 23);
+            txtIV.Size = new Size(291, 23);
             txtIV.TabIndex = 3;
             // 
             // label2
@@ -283,7 +367,7 @@
             label2.Dock = DockStyle.Fill;
             label2.Location = new Point(3, 30);
             label2.Name = "label2";
-            label2.Size = new Size(84, 30);
+            label2.Size = new Size(70, 30);
             label2.TabIndex = 2;
             label2.Text = "Vetor (IV)";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -294,7 +378,7 @@
             label1.Dock = DockStyle.Fill;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(84, 30);
+            label1.Size = new Size(70, 30);
             label1.TabIndex = 0;
             label1.Text = "Chave (Key)";
             label1.TextAlign = ContentAlignment.MiddleLeft;
@@ -302,18 +386,18 @@
             // txtKey
             // 
             txtKey.Dock = DockStyle.Fill;
-            txtKey.Location = new Point(93, 3);
+            txtKey.Location = new Point(79, 3);
             txtKey.Name = "txtKey";
-            txtKey.Size = new Size(277, 23);
+            txtKey.Size = new Size(291, 23);
             txtKey.TabIndex = 1;
             // 
             // cboAlgorithm
             // 
             cboAlgorithm.Dock = DockStyle.Fill;
             cboAlgorithm.FormattingEnabled = true;
-            cboAlgorithm.Location = new Point(93, 63);
+            cboAlgorithm.Location = new Point(79, 63);
             cboAlgorithm.Name = "cboAlgorithm";
-            cboAlgorithm.Size = new Size(277, 23);
+            cboAlgorithm.Size = new Size(291, 23);
             cboAlgorithm.TabIndex = 5;
             cboAlgorithm.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -341,52 +425,32 @@
             splitContainerPrincipal.Location = new Point(74, 175);
             splitContainerPrincipal.Name = "splitContainerPrincipal";
             splitContainerPrincipal.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainerPrincipal.Panel1
+            // 
+            splitContainerPrincipal.Panel1.Controls.Add(textBox1);
             splitContainerPrincipal.Size = new Size(726, 253);
-            splitContainerPrincipal.SplitterDistance = 223;
+            splitContainerPrincipal.SplitterDistance = 199;
             splitContainerPrincipal.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Black;
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = Color.FromArgb(0, 192, 0);
+            textBox1.Location = new Point(0, 0);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ScrollBars = ScrollBars.Both;
+            textBox1.Size = new Size(726, 199);
+            textBox1.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.AutoScroll = true;
-            tableLayoutPanel3.ColumnCount = 1;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Controls.Add(btnEncrypt_S, 0, 0);
-            tableLayoutPanel3.Controls.Add(btnDecrypt_S, 0, 2);
-            tableLayoutPanel3.Dock = DockStyle.Right;
-            tableLayoutPanel3.Location = new Point(572, 3);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 3;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.Size = new Size(143, 91);
-            tableLayoutPanel3.TabIndex = 1;
-            // 
-            // btnEncrypt_S
-            // 
-            btnEncrypt_S.Dock = DockStyle.Fill;
-            btnEncrypt_S.Location = new Point(3, 3);
-            btnEncrypt_S.Name = "btnEncrypt_S";
-            btnEncrypt_S.Size = new Size(137, 24);
-            btnEncrypt_S.TabIndex = 0;
-            btnEncrypt_S.Text = "Criptografar";
-            btnEncrypt_S.UseVisualStyleBackColor = true;
-            // 
-            // btnDecrypt_S
-            // 
-            btnDecrypt_S.Dock = DockStyle.Fill;
-            btnDecrypt_S.Location = new Point(3, 63);
-            btnDecrypt_S.Name = "btnDecrypt_S";
-            btnDecrypt_S.Size = new Size(137, 25);
-            btnDecrypt_S.TabIndex = 1;
-            btnDecrypt_S.Text = "Descriptografar";
-            btnDecrypt_S.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 
@@ -415,11 +479,13 @@
             toolStripPrincipal.PerformLayout();
             tabControlPrincipal.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            splitContainerPrincipal.Panel1.ResumeLayout(false);
+            splitContainerPrincipal.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).EndInit();
             splitContainerPrincipal.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -458,5 +524,12 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnEncrypt_S;
         private Button btnDecrypt_S;
+        private ToolStripStatusLabel lblEngine;
+        private ToolStripMenuItem opçõesToolStripMenuItem;
+        private ToolStripMenuItem motoresDeEncriptaçãoToolStripMenuItem;
+        private ToolStripMenuItem eBSCSPToolStripMenuItem;
+        private ToolStripMenuItem eBSCLIToolStripMenuItem;
+        private ToolStripMenuItem eBSRNclassicToolStripMenuItem;
+        private TextBox textBox1;
     }
 }
