@@ -69,6 +69,11 @@
             splitContainerPrincipal = new SplitContainer();
             textBox1 = new TextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            tableLayoutPanel4 = new TableLayoutPanel();
+            label4 = new Label();
+            label5 = new Label();
+            txtPublicKey = new TextBox();
+            txtPrivateKey = new TextBox();
             statusStripPrincipal.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
@@ -78,9 +83,11 @@
             tabPage2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).BeginInit();
             splitContainerPrincipal.Panel1.SuspendLayout();
             splitContainerPrincipal.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // statusStripPrincipal
@@ -404,6 +411,7 @@
             // tabPage3
             // 
             tabPage3.BackColor = SystemColors.Control;
+            tabPage3.Controls.Add(tableLayoutPanel4);
             tabPage3.Location = new Point(4, 4);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(718, 97);
@@ -452,6 +460,66 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Controls.Add(txtPrivateKey, 1, 1);
+            tableLayoutPanel4.Controls.Add(label5, 1, 0);
+            tableLayoutPanel4.Controls.Add(label4, 0, 0);
+            tableLayoutPanel4.Controls.Add(txtPublicKey, 0, 1);
+            tableLayoutPanel4.Dock = DockStyle.Left;
+            tableLayoutPanel4.Location = new Point(0, 0);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 2;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle());
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.Size = new Size(426, 97);
+            tableLayoutPanel4.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Fill;
+            label4.Location = new Point(3, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(207, 15);
+            label4.TabIndex = 0;
+            label4.Text = "Chave Pública";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Dock = DockStyle.Fill;
+            label5.Location = new Point(216, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(207, 15);
+            label5.TabIndex = 5;
+            label5.Text = "Chave Privada";
+            // 
+            // txtPublicKey
+            // 
+            txtPublicKey.Dock = DockStyle.Fill;
+            txtPublicKey.Font = new Font("Cascadia Mono", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPublicKey.Location = new Point(3, 18);
+            txtPublicKey.Multiline = true;
+            txtPublicKey.Name = "txtPublicKey";
+            txtPublicKey.ScrollBars = ScrollBars.Both;
+            txtPublicKey.Size = new Size(207, 76);
+            txtPublicKey.TabIndex = 6;
+            // 
+            // txtPrivateKey
+            // 
+            txtPrivateKey.Dock = DockStyle.Fill;
+            txtPrivateKey.Font = new Font("Cascadia Mono", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPrivateKey.Location = new Point(216, 18);
+            txtPrivateKey.Multiline = true;
+            txtPrivateKey.Name = "txtPrivateKey";
+            txtPrivateKey.ScrollBars = ScrollBars.Both;
+            txtPrivateKey.Size = new Size(207, 76);
+            txtPrivateKey.TabIndex = 7;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -482,10 +550,13 @@
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            tabPage3.ResumeLayout(false);
             splitContainerPrincipal.Panel1.ResumeLayout(false);
             splitContainerPrincipal.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).EndInit();
             splitContainerPrincipal.ResumeLayout(false);
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -531,5 +602,10 @@
         private ToolStripMenuItem eBSCLIToolStripMenuItem;
         private ToolStripMenuItem eBSRNclassicToolStripMenuItem;
         private TextBox textBox1;
+        private TableLayoutPanel tableLayoutPanel4;
+        private Label label5;
+        private Label label4;
+        private TextBox txtPrivateKey;
+        private TextBox txtPublicKey;
     }
 }
