@@ -211,7 +211,7 @@
             // 
             eBSCSPToolStripMenuItem.Name = "eBSCSPToolStripMenuItem";
             eBSCSPToolStripMenuItem.Size = new Size(159, 22);
-            eBSCSPToolStripMenuItem.Text = "EBS-CSP";
+            eBSCSPToolStripMenuItem.Text = "EBS-CSP (standard)";
             // 
             // eBSCLIToolStripMenuItem
             // 
