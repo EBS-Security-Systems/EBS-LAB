@@ -50,6 +50,7 @@
             btnExitEbsWeb = new ToolStripButton();
             btnEbsCli = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
+            btnRepoEBS_Lab = new ToolStripLabel();
             tabControlPrincipal = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
@@ -66,28 +67,29 @@
             cboAlgorithm = new ComboBox();
             nUpSimetric = new NumericUpDown();
             tabPage3 = new TabPage();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            btnDecryptAssymetric = new Button();
-            btnEncryptAssimetric = new Button();
-            btnGenerateKeyPair = new Button();
-            tableLayoutPanel5 = new TableLayoutPanel();
-            nUpKeyLen = new NumericUpDown();
-            label8 = new Label();
-            cboAlgorithmAssymetric = new ComboBox();
-            label7 = new Label();
-            lblAssyncMulti = new Label();
-            nUpMultiAssimetric = new NumericUpDown();
             tableLayoutPanel4 = new TableLayoutPanel();
             txtPrivateKey = new TextBox();
             label5 = new Label();
             label4 = new Label();
             txtPublicKey = new TextBox();
+            tableLayoutPanel6 = new TableLayoutPanel();
+            btnDecryptAssymetric = new Button();
+            btnEncryptAssimetric = new Button();
+            btnGenerateKeyPair = new Button();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            btnExportKeyPair = new Button();
+            btnImportKeyPair = new Button();
+            nUpKeyLen = new NumericUpDown();
+            label8 = new Label();
+            label7 = new Label();
+            lblAssyncMulti = new Label();
+            nUpMultiAssimetric = new NumericUpDown();
+            cboAlgorithmAssymetric = new ComboBox();
             tabPage4 = new TabPage();
             splitContainerPrincipal = new SplitContainer();
             textBox1 = new TextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
             toolTipPrincipal = new ToolTip(components);
-            btnRepoEBS_Lab = new ToolStripLabel();
             statusStripPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             menuStripPrincipal.SuspendLayout();
@@ -98,11 +100,11 @@
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nUpSimetric).BeginInit();
             tabPage3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nUpKeyLen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nUpMultiAssimetric).BeginInit();
-            tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).BeginInit();
             splitContainerPrincipal.Panel1.SuspendLayout();
             splitContainerPrincipal.Panel2.SuspendLayout();
@@ -112,9 +114,9 @@
             // statusStripPrincipal
             // 
             statusStripPrincipal.Items.AddRange(new ToolStripItem[] { sLUser, lblEngine });
-            statusStripPrincipal.Location = new Point(0, 428);
+            statusStripPrincipal.Location = new Point(0, 707);
             statusStripPrincipal.Name = "statusStripPrincipal";
-            statusStripPrincipal.Size = new Size(1560, 22);
+            statusStripPrincipal.Size = new Size(1350, 22);
             statusStripPrincipal.TabIndex = 0;
             statusStripPrincipal.Text = "statusStrip1";
             // 
@@ -150,7 +152,7 @@
             menuStripPrincipal.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, opçõesToolStripMenuItem });
             menuStripPrincipal.Location = new Point(0, 0);
             menuStripPrincipal.Name = "menuStripPrincipal";
-            menuStripPrincipal.Size = new Size(1560, 24);
+            menuStripPrincipal.Size = new Size(1350, 24);
             menuStripPrincipal.TabIndex = 2;
             menuStripPrincipal.Text = "menuStrip1";
             // 
@@ -223,7 +225,7 @@
             toolStripPrincipal.Items.AddRange(new ToolStripItem[] { btnLogin, btnExitEbsWeb, btnEbsCli, toolStripSeparator1, btnRepoEBS_Lab });
             toolStripPrincipal.Location = new Point(0, 24);
             toolStripPrincipal.Name = "toolStripPrincipal";
-            toolStripPrincipal.Size = new Size(1560, 26);
+            toolStripPrincipal.Size = new Size(1350, 26);
             toolStripPrincipal.TabIndex = 0;
             // 
             // btnLogin
@@ -258,6 +260,14 @@
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 26);
             // 
+            // btnRepoEBS_Lab
+            // 
+            btnRepoEBS_Lab.Image = Properties.Resources.Logo_EBS_LAB;
+            btnRepoEBS_Lab.Name = "btnRepoEBS_Lab";
+            btnRepoEBS_Lab.Size = new Size(170, 23);
+            btnRepoEBS_Lab.Text = "Repositório do EBS-LAB";
+            btnRepoEBS_Lab.Click += btnRepoEBS_Lab_Click;
+            // 
             // tabControlPrincipal
             // 
             tabControlPrincipal.Alignment = TabAlignment.Bottom;
@@ -269,7 +279,7 @@
             tabControlPrincipal.Location = new Point(0, 50);
             tabControlPrincipal.Name = "tabControlPrincipal";
             tabControlPrincipal.SelectedIndex = 0;
-            tabControlPrincipal.Size = new Size(1560, 144);
+            tabControlPrincipal.Size = new Size(1350, 144);
             tabControlPrincipal.TabIndex = 3;
             // 
             // tabPage1
@@ -278,7 +288,7 @@
             tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1552, 116);
+            tabPage1.Size = new Size(1342, 116);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Codificações";
             // 
@@ -290,7 +300,7 @@
             tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1478, 116);
+            tabPage2.Size = new Size(1342, 116);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Criptografia Simétrica";
             // 
@@ -302,7 +312,7 @@
             tableLayoutPanel3.Controls.Add(btnEncrypt_S, 0, 0);
             tableLayoutPanel3.Controls.Add(btnDecrypt_S, 0, 1);
             tableLayoutPanel3.Dock = DockStyle.Right;
-            tableLayoutPanel3.Location = new Point(1332, 3);
+            tableLayoutPanel3.Location = new Point(1196, 3);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -436,14 +446,76 @@
             // tabPage3
             // 
             tabPage3.BackColor = SystemColors.Control;
+            tabPage3.Controls.Add(tableLayoutPanel4);
             tabPage3.Controls.Add(tableLayoutPanel6);
             tabPage3.Controls.Add(tableLayoutPanel5);
-            tabPage3.Controls.Add(tableLayoutPanel4);
             tabPage3.Location = new Point(4, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1478, 116);
+            tabPage3.Size = new Size(1342, 116);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Criptografia Assimétrica";
+            // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Controls.Add(txtPrivateKey, 1, 1);
+            tableLayoutPanel4.Controls.Add(label5, 1, 0);
+            tableLayoutPanel4.Controls.Add(label4, 0, 0);
+            tableLayoutPanel4.Controls.Add(txtPublicKey, 0, 1);
+            tableLayoutPanel4.Dock = DockStyle.Left;
+            tableLayoutPanel4.Location = new Point(383, 0);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 2;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle());
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.Size = new Size(760, 116);
+            tableLayoutPanel4.TabIndex = 0;
+            // 
+            // txtPrivateKey
+            // 
+            txtPrivateKey.Dock = DockStyle.Fill;
+            txtPrivateKey.Font = new Font("Cascadia Mono", 9F);
+            txtPrivateKey.Location = new Point(383, 18);
+            txtPrivateKey.Multiline = true;
+            txtPrivateKey.Name = "txtPrivateKey";
+            txtPrivateKey.ScrollBars = ScrollBars.Both;
+            txtPrivateKey.Size = new Size(374, 95);
+            txtPrivateKey.TabIndex = 7;
+            txtPrivateKey.WordWrap = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Dock = DockStyle.Fill;
+            label5.Location = new Point(383, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(374, 15);
+            label5.TabIndex = 5;
+            label5.Text = "Chave Privada";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Fill;
+            label4.Location = new Point(3, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(374, 15);
+            label4.TabIndex = 0;
+            label4.Text = "Chave Pública";
+            // 
+            // txtPublicKey
+            // 
+            txtPublicKey.Dock = DockStyle.Fill;
+            txtPublicKey.Font = new Font("Cascadia Mono", 9F);
+            txtPublicKey.Location = new Point(3, 18);
+            txtPublicKey.Multiline = true;
+            txtPublicKey.Name = "txtPublicKey";
+            txtPublicKey.ScrollBars = ScrollBars.Both;
+            txtPublicKey.Size = new Size(374, 95);
+            txtPublicKey.TabIndex = 6;
+            txtPublicKey.WordWrap = false;
             // 
             // tableLayoutPanel6
             // 
@@ -453,7 +525,7 @@
             tableLayoutPanel6.Controls.Add(btnEncryptAssimetric, 0, 1);
             tableLayoutPanel6.Controls.Add(btnGenerateKeyPair, 0, 0);
             tableLayoutPanel6.Dock = DockStyle.Right;
-            tableLayoutPanel6.Location = new Point(1314, 0);
+            tableLayoutPanel6.Location = new Point(1178, 0);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 3;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
@@ -494,34 +566,57 @@
             // 
             // tableLayoutPanel5
             // 
-            tableLayoutPanel5.ColumnCount = 2;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            tableLayoutPanel5.ColumnCount = 3;
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.7964611F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.0757179F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.29765F));
+            tableLayoutPanel5.Controls.Add(btnExportKeyPair, 2, 0);
+            tableLayoutPanel5.Controls.Add(btnImportKeyPair, 2, 2);
             tableLayoutPanel5.Controls.Add(nUpKeyLen, 1, 1);
             tableLayoutPanel5.Controls.Add(label8, 0, 1);
-            tableLayoutPanel5.Controls.Add(cboAlgorithmAssymetric, 1, 0);
             tableLayoutPanel5.Controls.Add(label7, 0, 0);
             tableLayoutPanel5.Controls.Add(lblAssyncMulti, 0, 2);
             tableLayoutPanel5.Controls.Add(nUpMultiAssimetric, 1, 2);
+            tableLayoutPanel5.Controls.Add(cboAlgorithmAssymetric, 1, 0);
             tableLayoutPanel5.Dock = DockStyle.Left;
-            tableLayoutPanel5.Location = new Point(976, 0);
+            tableLayoutPanel5.Location = new Point(0, 0);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 4;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
-            tableLayoutPanel5.Size = new Size(211, 116);
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel5.Size = new Size(383, 116);
             tableLayoutPanel5.TabIndex = 1;
+            // 
+            // btnExportKeyPair
+            // 
+            btnExportKeyPair.Dock = DockStyle.Fill;
+            btnExportKeyPair.Location = new Point(223, 3);
+            btnExportKeyPair.Name = "btnExportKeyPair";
+            btnExportKeyPair.Size = new Size(157, 25);
+            btnExportKeyPair.TabIndex = 0;
+            btnExportKeyPair.Text = "Exportar Par-de-Chaves";
+            btnExportKeyPair.UseVisualStyleBackColor = true;
+            // 
+            // btnImportKeyPair
+            // 
+            btnImportKeyPair.Dock = DockStyle.Fill;
+            btnImportKeyPair.Location = new Point(223, 66);
+            btnImportKeyPair.Name = "btnImportKeyPair";
+            btnImportKeyPair.Size = new Size(157, 26);
+            btnImportKeyPair.TabIndex = 1;
+            btnImportKeyPair.Text = "Importar Par-de-Chaves";
+            btnImportKeyPair.UseVisualStyleBackColor = true;
             // 
             // nUpKeyLen
             // 
             nUpKeyLen.Dock = DockStyle.Fill;
-            nUpKeyLen.Location = new Point(87, 33);
+            nUpKeyLen.Location = new Point(82, 34);
             nUpKeyLen.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             nUpKeyLen.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nUpKeyLen.Name = "nUpKeyLen";
-            nUpKeyLen.Size = new Size(121, 23);
+            nUpKeyLen.Size = new Size(135, 23);
             nUpKeyLen.TabIndex = 9;
             nUpKeyLen.Value = new decimal(new int[] { 1024, 0, 0, 0 });
             // 
@@ -529,21 +624,12 @@
             // 
             label8.AutoSize = true;
             label8.Dock = DockStyle.Fill;
-            label8.Location = new Point(3, 30);
+            label8.Location = new Point(3, 31);
             label8.Name = "label8";
-            label8.Size = new Size(78, 30);
+            label8.Size = new Size(73, 32);
             label8.TabIndex = 8;
             label8.Text = "Tamanho da Chave (bits)";
             label8.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // cboAlgorithmAssymetric
-            // 
-            cboAlgorithmAssymetric.Dock = DockStyle.Fill;
-            cboAlgorithmAssymetric.FormattingEnabled = true;
-            cboAlgorithmAssymetric.Location = new Point(87, 3);
-            cboAlgorithmAssymetric.Name = "cboAlgorithmAssymetric";
-            cboAlgorithmAssymetric.Size = new Size(121, 23);
-            cboAlgorithmAssymetric.TabIndex = 6;
             // 
             // label7
             // 
@@ -551,7 +637,7 @@
             label7.Dock = DockStyle.Fill;
             label7.Location = new Point(3, 0);
             label7.Name = "label7";
-            label7.Size = new Size(78, 30);
+            label7.Size = new Size(73, 31);
             label7.TabIndex = 0;
             label7.Text = "Algoritmo";
             label7.TextAlign = ContentAlignment.MiddleLeft;
@@ -560,9 +646,9 @@
             // 
             lblAssyncMulti.AutoSize = true;
             lblAssyncMulti.Dock = DockStyle.Fill;
-            lblAssyncMulti.Location = new Point(3, 60);
+            lblAssyncMulti.Location = new Point(3, 63);
             lblAssyncMulti.Name = "lblAssyncMulti";
-            lblAssyncMulti.Size = new Size(78, 30);
+            lblAssyncMulti.Size = new Size(73, 32);
             lblAssyncMulti.TabIndex = 7;
             lblAssyncMulti.Text = "Múltiplo";
             lblAssyncMulti.TextAlign = ContentAlignment.MiddleLeft;
@@ -570,81 +656,28 @@
             // nUpMultiAssimetric
             // 
             nUpMultiAssimetric.Dock = DockStyle.Fill;
-            nUpMultiAssimetric.Location = new Point(87, 63);
+            nUpMultiAssimetric.Location = new Point(82, 66);
             nUpMultiAssimetric.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nUpMultiAssimetric.Name = "nUpMultiAssimetric";
-            nUpMultiAssimetric.Size = new Size(121, 23);
+            nUpMultiAssimetric.Size = new Size(135, 23);
             nUpMultiAssimetric.TabIndex = 1;
             nUpMultiAssimetric.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // tableLayoutPanel4
+            // cboAlgorithmAssymetric
             // 
-            tableLayoutPanel4.ColumnCount = 2;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Controls.Add(txtPrivateKey, 1, 1);
-            tableLayoutPanel4.Controls.Add(label5, 1, 0);
-            tableLayoutPanel4.Controls.Add(label4, 0, 0);
-            tableLayoutPanel4.Controls.Add(txtPublicKey, 0, 1);
-            tableLayoutPanel4.Dock = DockStyle.Left;
-            tableLayoutPanel4.Location = new Point(0, 0);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 2;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle());
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(976, 116);
-            tableLayoutPanel4.TabIndex = 0;
-            // 
-            // txtPrivateKey
-            // 
-            txtPrivateKey.Dock = DockStyle.Fill;
-            txtPrivateKey.Font = new Font("Cascadia Mono", 9F);
-            txtPrivateKey.Location = new Point(491, 18);
-            txtPrivateKey.Multiline = true;
-            txtPrivateKey.Name = "txtPrivateKey";
-            txtPrivateKey.ScrollBars = ScrollBars.Both;
-            txtPrivateKey.Size = new Size(482, 95);
-            txtPrivateKey.TabIndex = 7;
-            txtPrivateKey.Text = resources.GetString("txtPrivateKey.Text");
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Dock = DockStyle.Fill;
-            label5.Location = new Point(491, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(482, 15);
-            label5.TabIndex = 5;
-            label5.Text = "Chave Privada";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Dock = DockStyle.Fill;
-            label4.Location = new Point(3, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(482, 15);
-            label4.TabIndex = 0;
-            label4.Text = "Chave Pública";
-            // 
-            // txtPublicKey
-            // 
-            txtPublicKey.Dock = DockStyle.Fill;
-            txtPublicKey.Font = new Font("Cascadia Mono", 9F);
-            txtPublicKey.Location = new Point(3, 18);
-            txtPublicKey.Multiline = true;
-            txtPublicKey.Name = "txtPublicKey";
-            txtPublicKey.ScrollBars = ScrollBars.Both;
-            txtPublicKey.Size = new Size(482, 95);
-            txtPublicKey.TabIndex = 6;
-            txtPublicKey.Text = resources.GetString("txtPublicKey.Text");
+            cboAlgorithmAssymetric.Dock = DockStyle.Fill;
+            cboAlgorithmAssymetric.FormattingEnabled = true;
+            cboAlgorithmAssymetric.Location = new Point(82, 3);
+            cboAlgorithmAssymetric.Name = "cboAlgorithmAssymetric";
+            cboAlgorithmAssymetric.Size = new Size(135, 23);
+            cboAlgorithmAssymetric.TabIndex = 6;
             // 
             // tabPage4
             // 
             tabPage4.BackColor = SystemColors.Control;
             tabPage4.Location = new Point(4, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1478, 116);
+            tabPage4.Size = new Size(1342, 116);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Hashs";
             // 
@@ -662,8 +695,8 @@
             // splitContainerPrincipal.Panel2
             // 
             splitContainerPrincipal.Panel2.Controls.Add(pbLogo);
-            splitContainerPrincipal.Size = new Size(1560, 234);
-            splitContainerPrincipal.SplitterDistance = 144;
+            splitContainerPrincipal.Size = new Size(1350, 513);
+            splitContainerPrincipal.SplitterDistance = 422;
             splitContainerPrincipal.TabIndex = 4;
             // 
             // textBox1
@@ -677,28 +710,21 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(1560, 144);
+            textBox1.Size = new Size(1350, 422);
             textBox1.TabIndex = 0;
+            textBox1.WordWrap = false;
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // btnRepoEBS_Lab
-            // 
-            btnRepoEBS_Lab.Image = Properties.Resources.Logo_EBS_LAB;
-            btnRepoEBS_Lab.Name = "btnRepoEBS_Lab";
-            btnRepoEBS_Lab.Size = new Size(170, 23);
-            btnRepoEBS_Lab.Text = "Repositório do EBS-LAB";
-            btnRepoEBS_Lab.Click += btnRepoEBS_Lab_Click;
-            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1560, 450);
+            ClientSize = new Size(1350, 729);
             Controls.Add(splitContainerPrincipal);
             Controls.Add(tabControlPrincipal);
             Controls.Add(toolStripPrincipal);
@@ -723,13 +749,13 @@
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nUpSimetric).EndInit();
             tabPage3.ResumeLayout(false);
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
             tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nUpKeyLen).EndInit();
             ((System.ComponentModel.ISupportInitialize)nUpMultiAssimetric).EndInit();
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel4.PerformLayout();
             splitContainerPrincipal.Panel1.ResumeLayout(false);
             splitContainerPrincipal.Panel1.PerformLayout();
             splitContainerPrincipal.Panel2.ResumeLayout(false);
@@ -799,5 +825,7 @@
         private Button btnGenerateKeyPair;
         private ToolTip toolTipPrincipal;
         private ToolStripLabel btnRepoEBS_Lab;
+        private Button btnExportKeyPair;
+        private Button btnImportKeyPair;
     }
 }

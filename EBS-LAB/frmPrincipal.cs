@@ -10,6 +10,7 @@ namespace EBS_LAB
             InitializeComponent();
 
             toolTipPrincipal.SetToolTip(pbLogo, "Clique para acessar o repositório do projeto no GitHub");
+            //toolTipPrincipal.SetToolTip(btnRepoEBS_Lab, "Clique para acessar o repositório do projeto no GitHub");
             toolTipPrincipal.SetToolTip(lblAssyncMulti, "O efeito de encriptação em cascata não é viável para alguns algoritmos!");
             toolTipPrincipal.SetToolTip(nUpMultiAssimetric, "O efeito de encriptação em cascata não é viável para alguns algoritmos!");
         }
