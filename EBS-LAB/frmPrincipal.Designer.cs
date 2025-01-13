@@ -50,7 +50,7 @@
             btnExitEbsWeb = new ToolStripButton();
             btnEbsCli = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            btnRepoEBS_Lab = new ToolStripLabel();
+            btnRepoEBS_Lab = new ToolStripButton();
             tabControlPrincipal = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
@@ -254,6 +254,7 @@
             btnEbsCli.Name = "btnEbsCli";
             btnEbsCli.Size = new Size(111, 23);
             btnEbsCli.Text = "Abrir EBS-CLI";
+            btnEbsCli.Click += btnEbsCli_Click;
             // 
             // toolStripSeparator1
             // 
@@ -263,8 +264,9 @@
             // btnRepoEBS_Lab
             // 
             btnRepoEBS_Lab.Image = Properties.Resources.Logo_EBS_LAB;
+            btnRepoEBS_Lab.ImageTransparentColor = Color.Magenta;
             btnRepoEBS_Lab.Name = "btnRepoEBS_Lab";
-            btnRepoEBS_Lab.Size = new Size(170, 23);
+            btnRepoEBS_Lab.Size = new Size(174, 23);
             btnRepoEBS_Lab.Text = "Repositório do EBS-LAB";
             btnRepoEBS_Lab.Click += btnRepoEBS_Lab_Click;
             // 
@@ -824,8 +826,8 @@
         private Button btnEncryptAssimetric;
         private Button btnGenerateKeyPair;
         private ToolTip toolTipPrincipal;
-        private ToolStripLabel btnRepoEBS_Lab;
         private Button btnExportKeyPair;
         private Button btnImportKeyPair;
+        private ToolStripButton btnRepoEBS_Lab;
     }
 }

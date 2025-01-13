@@ -56,5 +56,9 @@ namespace EBS_LAB
             MessageBox.Show("Log-off efetuado com sucesso!", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btnEbsCli_Click(object sender, EventArgs e)
+        {
+
+        }       
     }
 }
