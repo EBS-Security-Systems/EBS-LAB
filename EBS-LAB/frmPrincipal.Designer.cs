@@ -65,15 +65,15 @@
             txtKey = new TextBox();
             cboAlgorithm = new ComboBox();
             tabPage3 = new TabPage();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            txtPrivateKey = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            txtPublicKey = new TextBox();
             tabPage4 = new TabPage();
             splitContainerPrincipal = new SplitContainer();
             textBox1 = new TextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            tableLayoutPanel4 = new TableLayoutPanel();
-            label4 = new Label();
-            label5 = new Label();
-            txtPublicKey = new TextBox();
-            txtPrivateKey = new TextBox();
             statusStripPrincipal.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
@@ -84,10 +84,10 @@
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tabPage3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).BeginInit();
             splitContainerPrincipal.Panel1.SuspendLayout();
             splitContainerPrincipal.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // statusStripPrincipal
@@ -95,7 +95,7 @@
             statusStripPrincipal.Items.AddRange(new ToolStripItem[] { sLUser, lblEngine });
             statusStripPrincipal.Location = new Point(0, 428);
             statusStripPrincipal.Name = "statusStripPrincipal";
-            statusStripPrincipal.Size = new Size(800, 22);
+            statusStripPrincipal.Size = new Size(1382, 22);
             statusStripPrincipal.TabIndex = 0;
             statusStripPrincipal.Text = "statusStrip1";
             // 
@@ -146,7 +146,7 @@
             menuStripPrincipal.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, opçõesToolStripMenuItem });
             menuStripPrincipal.Location = new Point(0, 0);
             menuStripPrincipal.Name = "menuStripPrincipal";
-            menuStripPrincipal.Size = new Size(800, 24);
+            menuStripPrincipal.Size = new Size(1382, 24);
             menuStripPrincipal.TabIndex = 2;
             menuStripPrincipal.Text = "menuStrip1";
             // 
@@ -219,7 +219,7 @@
             toolStripPrincipal.Items.AddRange(new ToolStripItem[] { btnLogin, btnExitEbsWeb, btnEbsCli, toolStripSeparator1 });
             toolStripPrincipal.Location = new Point(0, 24);
             toolStripPrincipal.Name = "toolStripPrincipal";
-            toolStripPrincipal.Size = new Size(800, 26);
+            toolStripPrincipal.Size = new Size(1382, 26);
             toolStripPrincipal.TabIndex = 0;
             // 
             // btnLogin
@@ -265,7 +265,7 @@
             tabControlPrincipal.Location = new Point(74, 50);
             tabControlPrincipal.Name = "tabControlPrincipal";
             tabControlPrincipal.SelectedIndex = 0;
-            tabControlPrincipal.Size = new Size(726, 125);
+            tabControlPrincipal.Size = new Size(1308, 125);
             tabControlPrincipal.TabIndex = 3;
             // 
             // tabPage1
@@ -274,7 +274,7 @@
             tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(718, 97);
+            tabPage1.Size = new Size(1300, 97);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Codificações";
             // 
@@ -286,7 +286,7 @@
             tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(718, 97);
+            tabPage2.Size = new Size(1300, 97);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Criptografia Simétrica";
             // 
@@ -298,7 +298,7 @@
             tableLayoutPanel3.Controls.Add(btnEncrypt_S, 0, 0);
             tableLayoutPanel3.Controls.Add(btnDecrypt_S, 0, 1);
             tableLayoutPanel3.Dock = DockStyle.Right;
-            tableLayoutPanel3.Location = new Point(572, 3);
+            tableLayoutPanel3.Location = new Point(1154, 3);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -414,51 +414,9 @@
             tabPage3.Controls.Add(tableLayoutPanel4);
             tabPage3.Location = new Point(4, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(718, 97);
+            tabPage3.Size = new Size(1300, 140);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Criptografia Assimétrica";
-            // 
-            // tabPage4
-            // 
-            tabPage4.BackColor = SystemColors.Control;
-            tabPage4.Location = new Point(4, 4);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(718, 97);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Hashs";
-            // 
-            // splitContainerPrincipal
-            // 
-            splitContainerPrincipal.Dock = DockStyle.Fill;
-            splitContainerPrincipal.Location = new Point(74, 175);
-            splitContainerPrincipal.Name = "splitContainerPrincipal";
-            splitContainerPrincipal.Orientation = Orientation.Horizontal;
-            // 
-            // splitContainerPrincipal.Panel1
-            // 
-            splitContainerPrincipal.Panel1.Controls.Add(textBox1);
-            splitContainerPrincipal.Size = new Size(726, 253);
-            splitContainerPrincipal.SplitterDistance = 199;
-            splitContainerPrincipal.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.Black;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.FromArgb(0, 192, 0);
-            textBox1.Location = new Point(0, 0);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(726, 199);
-            textBox1.TabIndex = 0;
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // tableLayoutPanel4
             // 
@@ -475,8 +433,30 @@
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel4.RowStyles.Add(new RowStyle());
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(426, 97);
+            tableLayoutPanel4.Size = new Size(976, 140);
             tableLayoutPanel4.TabIndex = 0;
+            // 
+            // txtPrivateKey
+            // 
+            txtPrivateKey.Dock = DockStyle.Fill;
+            txtPrivateKey.Font = new Font("Cascadia Mono", 9F);
+            txtPrivateKey.Location = new Point(491, 18);
+            txtPrivateKey.Multiline = true;
+            txtPrivateKey.Name = "txtPrivateKey";
+            txtPrivateKey.ScrollBars = ScrollBars.Both;
+            txtPrivateKey.Size = new Size(482, 119);
+            txtPrivateKey.TabIndex = 7;
+            txtPrivateKey.Text = resources.GetString("txtPrivateKey.Text");
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Dock = DockStyle.Fill;
+            label5.Location = new Point(491, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(482, 15);
+            label5.TabIndex = 5;
+            label5.Text = "Chave Privada";
             // 
             // label4
             // 
@@ -484,48 +464,70 @@
             label4.Dock = DockStyle.Fill;
             label4.Location = new Point(3, 0);
             label4.Name = "label4";
-            label4.Size = new Size(207, 15);
+            label4.Size = new Size(482, 15);
             label4.TabIndex = 0;
             label4.Text = "Chave Pública";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Dock = DockStyle.Fill;
-            label5.Location = new Point(216, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(207, 15);
-            label5.TabIndex = 5;
-            label5.Text = "Chave Privada";
             // 
             // txtPublicKey
             // 
             txtPublicKey.Dock = DockStyle.Fill;
-            txtPublicKey.Font = new Font("Cascadia Mono", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPublicKey.Font = new Font("Cascadia Mono", 9F);
             txtPublicKey.Location = new Point(3, 18);
             txtPublicKey.Multiline = true;
             txtPublicKey.Name = "txtPublicKey";
             txtPublicKey.ScrollBars = ScrollBars.Both;
-            txtPublicKey.Size = new Size(207, 76);
+            txtPublicKey.Size = new Size(482, 119);
             txtPublicKey.TabIndex = 6;
+            txtPublicKey.Text = resources.GetString("txtPublicKey.Text");
             // 
-            // txtPrivateKey
+            // tabPage4
             // 
-            txtPrivateKey.Dock = DockStyle.Fill;
-            txtPrivateKey.Font = new Font("Cascadia Mono", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPrivateKey.Location = new Point(216, 18);
-            txtPrivateKey.Multiline = true;
-            txtPrivateKey.Name = "txtPrivateKey";
-            txtPrivateKey.ScrollBars = ScrollBars.Both;
-            txtPrivateKey.Size = new Size(207, 76);
-            txtPrivateKey.TabIndex = 7;
+            tabPage4.BackColor = SystemColors.Control;
+            tabPage4.Location = new Point(4, 4);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Size = new Size(1300, 140);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Hashs";
+            // 
+            // splitContainerPrincipal
+            // 
+            splitContainerPrincipal.Dock = DockStyle.Fill;
+            splitContainerPrincipal.Location = new Point(74, 175);
+            splitContainerPrincipal.Name = "splitContainerPrincipal";
+            splitContainerPrincipal.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainerPrincipal.Panel1
+            // 
+            splitContainerPrincipal.Panel1.Controls.Add(textBox1);
+            splitContainerPrincipal.Size = new Size(1308, 253);
+            splitContainerPrincipal.SplitterDistance = 218;
+            splitContainerPrincipal.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Black;
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = Color.FromArgb(0, 192, 0);
+            textBox1.Location = new Point(0, 0);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ScrollBars = ScrollBars.Both;
+            textBox1.Size = new Size(1308, 218);
+            textBox1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1382, 450);
             Controls.Add(splitContainerPrincipal);
             Controls.Add(tabControlPrincipal);
             Controls.Add(tableLayoutPanel1);
@@ -551,12 +553,12 @@
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tabPage3.ResumeLayout(false);
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
             splitContainerPrincipal.Panel1.ResumeLayout(false);
             splitContainerPrincipal.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).EndInit();
             splitContainerPrincipal.ResumeLayout(false);
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

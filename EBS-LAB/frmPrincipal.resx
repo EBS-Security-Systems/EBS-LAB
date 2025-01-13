@@ -126,6 +126,31 @@
   <metadata name="toolStripPrincipal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>349, 19</value>
   </metadata>
+  <data name="txtPrivateKey.Text" xml:space="preserve">
+    <value>-----BEGIN RSA PRIVATE KEY-----
+MIICWwIBAAKBgQCutoz0NTclo0Fe6wS3FKQwfjRbFvVIceVlZHJvB3uQQebbAfHW
+V+VJhUts5uw2ElvcFzcXfmOxiYyScQKA0wh2jO876cenZi/+m7rCoW7CTh+i+TP6
+xN1QebUNQ+vxfWwkeX8GM/C5YGag7Gr7CMI/PmYU7uBgxHxGFPj27ety4QIDAQAB
+AoGAAmmtaV7ToFs5m6zBEyFWfSSrVJL/PFP1xdcxf2Eukys5QE7ko3bNJHi2timE
+0k4PUNjfOotU8LMWqvdaJNrgqs5UaGjuTWuLJXoD7XQO5YQX3JUAdfjkddmrtsCA
+VaCt09Y+bEd8i4dUece9ID/iHoEewUqQGUyr891EEjhZ0mECQQDMG8tre4OQtyO+
+TlVa2IMEC9HoXOYmTheji1Vi1+MB2xLtNZcxxybu4MsdFqMhZ+EFjUBNo1TmeHRd
+YyYPsXgpAkEA2yGUcNelzpBYljFHj0LoEsENse6A/h8Ve8tUIjsS3PDJ7RwhbpWT
+h4X3NNa4eXErV5/hpu0zP5ZyZTFjPr9b+QJALf2JTXOsRnxtqmDeLLUieFPtfU0J
+ctIf03L+z2HTvcRONHLh2Y6FQEgYnDpQkaNleanFNnk6FSBJIA3KMrkLWQJABeGl
+2U2AbsXjCszxzb+O+QnjczYiki+FZRg0/uI1BGcWFF4f65bqKcYHt4xX0TKfZi+t
+X8yYBonkMiEcN8/tCQJATh2DmMLwzHJscei3G3r2dUaWvhUOYj7L4Xu+u5UfAdsr
+FgWlL9wh1OBRXq+3cUgUdmibGmmHRYaCPDYX3JWTdQ==
+-----END RSA PRIVATE KEY-----</value>
+  </data>
+  <data name="txtPublicKey.Text" xml:space="preserve">
+    <value>-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCutoz0NTclo0Fe6wS3FKQwfjRb
+FvVIceVlZHJvB3uQQebbAfHWV+VJhUts5uw2ElvcFzcXfmOxiYyScQKA0wh2jO87
+6cenZi/+m7rCoW7CTh+i+TP6xN1QebUNQ+vxfWwkeX8GM/C5YGag7Gr7CMI/PmYU
+7uBgxHxGFPj27ety4QIDAQAB
+-----END PUBLIC KEY-----</value>
+  </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>494, 19</value>
   </metadata>
