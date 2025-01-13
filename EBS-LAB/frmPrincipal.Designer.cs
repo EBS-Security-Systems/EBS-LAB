@@ -33,7 +33,6 @@
             statusStripPrincipal = new StatusStrip();
             sLUser = new ToolStripStatusLabel();
             lblEngine = new ToolStripStatusLabel();
-            tableLayoutPanel1 = new TableLayoutPanel();
             pbLogo = new PictureBox();
             menuStripPrincipal = new MenuStrip();
             arquivoToolStripMenuItem = new ToolStripMenuItem();
@@ -88,8 +87,8 @@
             textBox1 = new TextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
             toolTipPrincipal = new ToolTip(components);
+            btnRepoEBS_Lab = new ToolStripLabel();
             statusStripPrincipal.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             menuStripPrincipal.SuspendLayout();
             toolStripPrincipal.SuspendLayout();
@@ -106,6 +105,7 @@
             tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).BeginInit();
             splitContainerPrincipal.Panel1.SuspendLayout();
+            splitContainerPrincipal.Panel2.SuspendLayout();
             splitContainerPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -133,28 +133,13 @@
             lblEngine.Size = new Size(239, 17);
             lblEngine.Text = "Motor de Encriptação: (nenhum conectado)";
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(pbLogo, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Left;
-            tableLayoutPanel1.Location = new Point(0, 50);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(74, 378);
-            tableLayoutPanel1.TabIndex = 1;
-            // 
             // pbLogo
             // 
             pbLogo.Cursor = Cursors.Hand;
-            pbLogo.Dock = DockStyle.Top;
             pbLogo.Image = Properties.Resources.Logo_EBS_LAB;
-            pbLogo.Location = new Point(3, 3);
+            pbLogo.Location = new Point(4, 2);
             pbLogo.Name = "pbLogo";
-            pbLogo.Size = new Size(68, 65);
+            pbLogo.Size = new Size(75, 75);
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pbLogo.TabIndex = 0;
             pbLogo.TabStop = false;
@@ -235,7 +220,7 @@
             // toolStripPrincipal
             // 
             toolStripPrincipal.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            toolStripPrincipal.Items.AddRange(new ToolStripItem[] { btnLogin, btnExitEbsWeb, btnEbsCli, toolStripSeparator1 });
+            toolStripPrincipal.Items.AddRange(new ToolStripItem[] { btnLogin, btnExitEbsWeb, btnEbsCli, toolStripSeparator1, btnRepoEBS_Lab });
             toolStripPrincipal.Location = new Point(0, 24);
             toolStripPrincipal.Name = "toolStripPrincipal";
             toolStripPrincipal.Size = new Size(1560, 26);
@@ -281,10 +266,10 @@
             tabControlPrincipal.Controls.Add(tabPage3);
             tabControlPrincipal.Controls.Add(tabPage4);
             tabControlPrincipal.Dock = DockStyle.Top;
-            tabControlPrincipal.Location = new Point(74, 50);
+            tabControlPrincipal.Location = new Point(0, 50);
             tabControlPrincipal.Name = "tabControlPrincipal";
             tabControlPrincipal.SelectedIndex = 0;
-            tabControlPrincipal.Size = new Size(1486, 144);
+            tabControlPrincipal.Size = new Size(1560, 144);
             tabControlPrincipal.TabIndex = 3;
             // 
             // tabPage1
@@ -293,7 +278,7 @@
             tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1478, 116);
+            tabPage1.Size = new Size(1552, 116);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Codificações";
             // 
@@ -437,7 +422,6 @@
             cboAlgorithm.Name = "cboAlgorithm";
             cboAlgorithm.Size = new Size(291, 23);
             cboAlgorithm.TabIndex = 5;
-            cboAlgorithm.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // nUpSimetric
             // 
@@ -667,15 +651,19 @@
             // splitContainerPrincipal
             // 
             splitContainerPrincipal.Dock = DockStyle.Fill;
-            splitContainerPrincipal.Location = new Point(74, 194);
+            splitContainerPrincipal.Location = new Point(0, 194);
             splitContainerPrincipal.Name = "splitContainerPrincipal";
             splitContainerPrincipal.Orientation = Orientation.Horizontal;
             // 
             // splitContainerPrincipal.Panel1
             // 
             splitContainerPrincipal.Panel1.Controls.Add(textBox1);
-            splitContainerPrincipal.Size = new Size(1486, 234);
-            splitContainerPrincipal.SplitterDistance = 201;
+            // 
+            // splitContainerPrincipal.Panel2
+            // 
+            splitContainerPrincipal.Panel2.Controls.Add(pbLogo);
+            splitContainerPrincipal.Size = new Size(1560, 234);
+            splitContainerPrincipal.SplitterDistance = 144;
             splitContainerPrincipal.TabIndex = 4;
             // 
             // textBox1
@@ -689,13 +677,21 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(1486, 201);
+            textBox1.Size = new Size(1560, 144);
             textBox1.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // btnRepoEBS_Lab
+            // 
+            btnRepoEBS_Lab.Image = Properties.Resources.Logo_EBS_LAB;
+            btnRepoEBS_Lab.Name = "btnRepoEBS_Lab";
+            btnRepoEBS_Lab.Size = new Size(170, 23);
+            btnRepoEBS_Lab.Text = "Repositório do EBS-LAB";
+            btnRepoEBS_Lab.Click += btnRepoEBS_Lab_Click;
             // 
             // frmPrincipal
             // 
@@ -705,7 +701,6 @@
             ClientSize = new Size(1560, 450);
             Controls.Add(splitContainerPrincipal);
             Controls.Add(tabControlPrincipal);
-            Controls.Add(tableLayoutPanel1);
             Controls.Add(toolStripPrincipal);
             Controls.Add(menuStripPrincipal);
             Controls.Add(statusStripPrincipal);
@@ -716,7 +711,6 @@
             WindowState = FormWindowState.Maximized;
             statusStripPrincipal.ResumeLayout(false);
             statusStripPrincipal.PerformLayout();
-            tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             menuStripPrincipal.ResumeLayout(false);
             menuStripPrincipal.PerformLayout();
@@ -738,6 +732,7 @@
             tableLayoutPanel4.PerformLayout();
             splitContainerPrincipal.Panel1.ResumeLayout(false);
             splitContainerPrincipal.Panel1.PerformLayout();
+            splitContainerPrincipal.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).EndInit();
             splitContainerPrincipal.ResumeLayout(false);
             ResumeLayout(false);
@@ -748,7 +743,6 @@
 
         private StatusStrip statusStripPrincipal;
         private ToolStripStatusLabel sLUser;
-        private TableLayoutPanel tableLayoutPanel1;
         private PictureBox pbLogo;
         private MenuStrip menuStripPrincipal;
         private ToolStripMenuItem arquivoToolStripMenuItem;
@@ -804,5 +798,6 @@
         private Button btnEncryptAssimetric;
         private Button btnGenerateKeyPair;
         private ToolTip toolTipPrincipal;
+        private ToolStripLabel btnRepoEBS_Lab;
     }
 }

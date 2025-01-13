@@ -3,15 +3,20 @@ using System.Diagnostics;
 namespace EBS_LAB
 {
     public partial class frmPrincipal : Form
-    {        
+    {
         public string user = "";
         public frmPrincipal()
         {
             InitializeComponent();
-            
+
             toolTipPrincipal.SetToolTip(pbLogo, "Clique para acessar o repositório do projeto no GitHub");
             toolTipPrincipal.SetToolTip(lblAssyncMulti, "O efeito de encriptação em cascata não é viável para alguns algoritmos!");
             toolTipPrincipal.SetToolTip(nUpMultiAssimetric, "O efeito de encriptação em cascata não é viável para alguns algoritmos!");
+        }
+
+        private void btnRepoEBS_Lab_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(@"https://github.com/EBS-Security-Systems/EBS-LAB") { UseShellExecute = true });
         }
 
         private void pbLogo_Click(object sender, EventArgs e)
@@ -50,10 +55,5 @@ namespace EBS_LAB
             MessageBox.Show("Log-off efetuado com sucesso!", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-       
     }
 }
