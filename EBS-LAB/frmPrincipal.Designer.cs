@@ -86,6 +86,15 @@
             nUpMultiAssimetric = new NumericUpDown();
             cboAlgorithmAssymetric = new ComboBox();
             tabPage4 = new TabPage();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            nUpShakeBits = new NumericUpDown();
+            cboHashExit = new ComboBox();
+            nUpMultiHash = new NumericUpDown();
+            cboHashAlgorithm = new ComboBox();
+            label15 = new Label();
+            label13 = new Label();
+            label11 = new Label();
+            label9 = new Label();
             splitContainerPrincipal = new SplitContainer();
             textBox1 = new TextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
@@ -105,6 +114,10 @@
             tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nUpKeyLen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nUpMultiAssimetric).BeginInit();
+            tabPage4.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nUpShakeBits).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nUpMultiHash).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).BeginInit();
             splitContainerPrincipal.Panel1.SuspendLayout();
             splitContainerPrincipal.Panel2.SuspendLayout();
@@ -429,6 +442,7 @@
             // cboAlgorithm
             // 
             cboAlgorithm.Dock = DockStyle.Fill;
+            cboAlgorithm.DropDownStyle = ComboBoxStyle.DropDownList;
             cboAlgorithm.FormattingEnabled = true;
             cboAlgorithm.Location = new Point(79, 57);
             cboAlgorithm.Name = "cboAlgorithm";
@@ -668,6 +682,7 @@
             // cboAlgorithmAssymetric
             // 
             cboAlgorithmAssymetric.Dock = DockStyle.Fill;
+            cboAlgorithmAssymetric.DropDownStyle = ComboBoxStyle.DropDownList;
             cboAlgorithmAssymetric.FormattingEnabled = true;
             cboAlgorithmAssymetric.Location = new Point(82, 3);
             cboAlgorithmAssymetric.Name = "cboAlgorithmAssymetric";
@@ -677,11 +692,125 @@
             // tabPage4
             // 
             tabPage4.BackColor = SystemColors.Control;
+            tabPage4.Controls.Add(tableLayoutPanel1);
             tabPage4.Location = new Point(4, 4);
             tabPage4.Name = "tabPage4";
             tabPage4.Size = new Size(1342, 116);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Hashs";
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.Controls.Add(nUpShakeBits, 1, 3);
+            tableLayoutPanel1.Controls.Add(cboHashExit, 1, 2);
+            tableLayoutPanel1.Controls.Add(nUpMultiHash, 1, 1);
+            tableLayoutPanel1.Controls.Add(cboHashAlgorithm, 1, 0);
+            tableLayoutPanel1.Controls.Add(label15, 0, 3);
+            tableLayoutPanel1.Controls.Add(label13, 0, 2);
+            tableLayoutPanel1.Controls.Add(label11, 0, 1);
+            tableLayoutPanel1.Controls.Add(label9, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Left;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Size = new Size(247, 116);
+            tableLayoutPanel1.TabIndex = 0;
+            // 
+            // nUpShakeBits
+            // 
+            nUpShakeBits.Dock = DockStyle.Fill;
+            nUpShakeBits.Enabled = false;
+            nUpShakeBits.Location = new Point(85, 90);
+            nUpShakeBits.Maximum = new decimal(new int[] { 1024, 0, 0, 0 });
+            nUpShakeBits.Minimum = new decimal(new int[] { 32, 0, 0, 0 });
+            nUpShakeBits.Name = "nUpShakeBits";
+            nUpShakeBits.Size = new Size(159, 23);
+            nUpShakeBits.TabIndex = 13;
+            nUpShakeBits.Value = new decimal(new int[] { 32, 0, 0, 0 });
+            // 
+            // cboHashExit
+            // 
+            cboHashExit.AutoCompleteCustomSource.AddRange(new string[] { "Hexadecimal (HEX)", "Base64" });
+            cboHashExit.Dock = DockStyle.Fill;
+            cboHashExit.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboHashExit.FormattingEnabled = true;
+            cboHashExit.Items.AddRange(new object[] { "Hexadecimal (HEX)", "Base64" });
+            cboHashExit.Location = new Point(85, 61);
+            cboHashExit.Name = "cboHashExit";
+            cboHashExit.Size = new Size(159, 23);
+            cboHashExit.TabIndex = 12;
+            // 
+            // nUpMultiHash
+            // 
+            nUpMultiHash.Dock = DockStyle.Fill;
+            nUpMultiHash.Location = new Point(85, 32);
+            nUpMultiHash.Maximum = new decimal(new int[] { -727379968, 232, 0, 0 });
+            nUpMultiHash.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nUpMultiHash.Name = "nUpMultiHash";
+            nUpMultiHash.Size = new Size(159, 23);
+            nUpMultiHash.TabIndex = 11;
+            nUpMultiHash.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // cboHashAlgorithm
+            // 
+            cboHashAlgorithm.Dock = DockStyle.Fill;
+            cboHashAlgorithm.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboHashAlgorithm.FormattingEnabled = true;
+            cboHashAlgorithm.Location = new Point(85, 3);
+            cboHashAlgorithm.Name = "cboHashAlgorithm";
+            cboHashAlgorithm.Size = new Size(159, 23);
+            cboHashAlgorithm.TabIndex = 10;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Dock = DockStyle.Fill;
+            label15.Location = new Point(3, 87);
+            label15.Name = "label15";
+            label15.Size = new Size(76, 29);
+            label15.TabIndex = 9;
+            label15.Text = "SHAKE (bits)";
+            label15.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Dock = DockStyle.Fill;
+            label13.Location = new Point(3, 58);
+            label13.Name = "label13";
+            label13.Size = new Size(76, 29);
+            label13.TabIndex = 5;
+            label13.Text = "Tipo de saída";
+            label13.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Dock = DockStyle.Fill;
+            label11.Location = new Point(3, 29);
+            label11.Name = "label11";
+            label11.Size = new Size(76, 29);
+            label11.TabIndex = 2;
+            label11.Text = "Múltiplo";
+            label11.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Dock = DockStyle.Fill;
+            label9.Location = new Point(3, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(76, 29);
+            label9.TabIndex = 0;
+            label9.Text = "Algoritmo";
+            label9.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // splitContainerPrincipal
             // 
@@ -758,6 +887,11 @@
             tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nUpKeyLen).EndInit();
             ((System.ComponentModel.ISupportInitialize)nUpMultiAssimetric).EndInit();
+            tabPage4.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nUpShakeBits).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nUpMultiHash).EndInit();
             splitContainerPrincipal.Panel1.ResumeLayout(false);
             splitContainerPrincipal.Panel1.PerformLayout();
             splitContainerPrincipal.Panel2.ResumeLayout(false);
@@ -829,5 +963,14 @@
         private Button btnExportKeyPair;
         private Button btnImportKeyPair;
         private ToolStripButton btnRepoEBS_Lab;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label13;
+        private Label label11;
+        private Label label9;
+        private NumericUpDown nUpShakeBits;
+        private ComboBox cboHashExit;
+        private NumericUpDown nUpMultiHash;
+        private ComboBox cboHashAlgorithm;
+        private Label label15;
     }
 }
