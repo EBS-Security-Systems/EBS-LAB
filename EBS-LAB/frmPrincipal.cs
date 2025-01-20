@@ -138,6 +138,11 @@ namespace EBS_LAB
                         break;
                 }
             }
+            else
+            {
+                // Tratar o caso em que cell.Value é nulo
+                MessageBox.Show("O valor da célula é nulo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void AtualizarColunas(int rowIndex, int decimalValue)

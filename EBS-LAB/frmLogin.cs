@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;*/
 using System.Diagnostics;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using static EBS_LAB.frmLogin;
 /*using System.Net.Http;
 using System.Drawing;
 using System.Linq;
@@ -95,35 +97,40 @@ namespace EBS_LAB
                     {
                         // Desserializar a resposta JSON para o objeto LoginResponse
                         var loginResponse = JsonSerializer.Deserialize<LoginResponse>(responseContent);
+                        if (loginResponse != null && !string.IsNullOrEmpty(loginResponse.Nickname))
+                        {
+                            // Agora podemos acessar o nickname retornado pela API                        
+                            string nickname = Encoding.UTF8.GetString(Convert.FromBase64String(loginResponse.Nickname));
 
-                        // Agora podemos acessar o nickname retornado pela API
-                        string nickname = Encoding.UTF8.GetString(Convert.FromBase64String(loginResponse.Nickname));
-
-                        MessageBox.Show($"Seja bem vindo @{nickname}", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.User = nickname;
-                        this.DialogResult = DialogResult.OK;
+                            MessageBox.Show($"Seja bem vindo @{nickname}", "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.User = nickname;
+                            this.DialogResult = DialogResult.OK;
+                        }
                     }
                     else
                     {
                         var error_Response = JsonSerializer.Deserialize<ErrorResponse>(responseContent);
-                        int error_code = int.Parse(error_Response.Error);
-                        string error_Message = "";
-                        switch (error_code)
+                        if (error_Response != null && !string.IsNullOrEmpty(error_Response.Error))
                         {
-                            case 1:
-                                error_Message = "Senha incorreta!";
-                                break;
-                            case 2:
-                                error_Message = "Usuário inativo!";
-                                break;
-                            case 3:
-                                error_Message = "Usuário não encontrado!";
-                                break;
-                            default:
-                                error_Message = responseContent;
-                                break;
+                            int error_code = int.Parse(error_Response.Error);
+                            string error_Message = "";
+                            switch (error_code)
+                            {
+                                case 1:
+                                    error_Message = "Senha incorreta!";
+                                    break;
+                                case 2:
+                                    error_Message = "Usuário inativo!";
+                                    break;
+                                case 3:
+                                    error_Message = "Usuário não encontrado!";
+                                    break;
+                                default:
+                                    error_Message = responseContent;
+                                    break;
+                            }
+                            MessageBox.Show(error_Message, "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
-                        MessageBox.Show(error_Message, "EBS-WEB - EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 catch (Exception ex)
