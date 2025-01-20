@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Text;
 
 namespace EBS_LAB
 {
@@ -59,6 +60,28 @@ namespace EBS_LAB
         private void btnEbsCli_Click(object sender, EventArgs e)
         {
 
-        }       
+        }
+
+        private void eBSCSPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrincipal_TextChanged(object sender, EventArgs e)
+        {
+            string text = txtPrincipal.Text;
+            dtgPrincipal.Rows.Clear(); // Limpa as linhas existentes
+
+            foreach (char c in text)
+            {
+                int decimalValue = c;
+                string binaryValue = Convert.ToString(decimalValue, 2).PadLeft(8, '0'); // 8 bits
+                string hexValue = decimalValue.ToString("X2");
+                string octalValue = Convert.ToString(decimalValue, 8);
+
+                dtgPrincipal.Rows.Add(c.ToString(), decimalValue, binaryValue, octalValue, hexValue);
+            }
+
+        }
     }
 }

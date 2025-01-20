@@ -86,6 +86,8 @@
             nUpMultiAssimetric = new NumericUpDown();
             cboAlgorithmAssymetric = new ComboBox();
             tabPage4 = new TabPage();
+            tableLayoutPanel7 = new TableLayoutPanel();
+            button1 = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             nUpShakeBits = new NumericUpDown();
             cboHashExit = new ComboBox();
@@ -96,14 +98,21 @@
             label11 = new Label();
             label9 = new Label();
             splitContainerPrincipal = new SplitContainer();
-            textBox1 = new TextBox();
+            txtPrincipal = new TextBox();
+            dtgPrincipal = new DataGridView();
             contextMenuStrip1 = new ContextMenuStrip(components);
             toolTipPrincipal = new ToolTip(components);
+            id_Ordem = new DataGridViewTextBoxColumn();
+            DEC = new DataGridViewTextBoxColumn();
+            BIN = new DataGridViewTextBoxColumn();
+            OCT = new DataGridViewTextBoxColumn();
+            HEX = new DataGridViewTextBoxColumn();
             statusStripPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             menuStripPrincipal.SuspendLayout();
             toolStripPrincipal.SuspendLayout();
             tabControlPrincipal.SuspendLayout();
+            tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -115,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)nUpKeyLen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nUpMultiAssimetric).BeginInit();
             tabPage4.SuspendLayout();
+            tableLayoutPanel7.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nUpShakeBits).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nUpMultiHash).BeginInit();
@@ -122,6 +132,7 @@
             splitContainerPrincipal.Panel1.SuspendLayout();
             splitContainerPrincipal.Panel2.SuspendLayout();
             splitContainerPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgPrincipal).BeginInit();
             SuspendLayout();
             // 
             // statusStripPrincipal
@@ -152,7 +163,7 @@
             // 
             pbLogo.Cursor = Cursors.Hand;
             pbLogo.Image = Properties.Resources.Logo_EBS_LAB;
-            pbLogo.Location = new Point(4, 2);
+            pbLogo.Location = new Point(0, 0);
             pbLogo.Name = "pbLogo";
             pbLogo.Size = new Size(75, 75);
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -225,6 +236,7 @@
             eBSCSPToolStripMenuItem.Name = "eBSCSPToolStripMenuItem";
             eBSCSPToolStripMenuItem.Size = new Size(176, 22);
             eBSCSPToolStripMenuItem.Text = "EBS-CSP (standard)";
+            eBSCSPToolStripMenuItem.Click += eBSCSPToolStripMenuItem_Click;
             // 
             // eBSCLIToolStripMenuItem
             // 
@@ -300,6 +312,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = SystemColors.Control;
+            tabPage1.Controls.Add(pbLogo);
             tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -692,12 +705,37 @@
             // tabPage4
             // 
             tabPage4.BackColor = SystemColors.Control;
+            tabPage4.Controls.Add(tableLayoutPanel7);
             tabPage4.Controls.Add(tableLayoutPanel1);
             tabPage4.Location = new Point(4, 4);
             tabPage4.Name = "tabPage4";
             tabPage4.Size = new Size(1342, 116);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Hashs";
+            // 
+            // tableLayoutPanel7
+            // 
+            tableLayoutPanel7.ColumnCount = 1;
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel7.Controls.Add(button1, 0, 0);
+            tableLayoutPanel7.Dock = DockStyle.Right;
+            tableLayoutPanel7.Location = new Point(1199, 0);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 2;
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel7.Size = new Size(143, 116);
+            tableLayoutPanel7.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Dock = DockStyle.Fill;
+            button1.Location = new Point(3, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(137, 52);
+            button1.TabIndex = 0;
+            button1.Text = "Iniciar Hasheamento";
+            button1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -817,38 +855,75 @@
             splitContainerPrincipal.Dock = DockStyle.Fill;
             splitContainerPrincipal.Location = new Point(0, 194);
             splitContainerPrincipal.Name = "splitContainerPrincipal";
-            splitContainerPrincipal.Orientation = Orientation.Horizontal;
             // 
             // splitContainerPrincipal.Panel1
             // 
-            splitContainerPrincipal.Panel1.Controls.Add(textBox1);
+            splitContainerPrincipal.Panel1.Controls.Add(txtPrincipal);
             // 
             // splitContainerPrincipal.Panel2
             // 
-            splitContainerPrincipal.Panel2.Controls.Add(pbLogo);
+            splitContainerPrincipal.Panel2.Controls.Add(dtgPrincipal);
             splitContainerPrincipal.Size = new Size(1350, 513);
-            splitContainerPrincipal.SplitterDistance = 422;
+            splitContainerPrincipal.SplitterDistance = 931;
             splitContainerPrincipal.TabIndex = 4;
             // 
-            // textBox1
+            // txtPrincipal
             // 
-            textBox1.BackColor = Color.Black;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.FromArgb(0, 192, 0);
-            textBox1.Location = new Point(0, 0);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(1350, 422);
-            textBox1.TabIndex = 0;
-            textBox1.WordWrap = false;
+            txtPrincipal.BackColor = Color.Black;
+            txtPrincipal.BorderStyle = BorderStyle.FixedSingle;
+            txtPrincipal.Dock = DockStyle.Fill;
+            txtPrincipal.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPrincipal.ForeColor = Color.FromArgb(0, 192, 0);
+            txtPrincipal.Location = new Point(0, 0);
+            txtPrincipal.Multiline = true;
+            txtPrincipal.Name = "txtPrincipal";
+            txtPrincipal.ScrollBars = ScrollBars.Both;
+            txtPrincipal.Size = new Size(931, 513);
+            txtPrincipal.TabIndex = 0;
+            txtPrincipal.WordWrap = false;
+            txtPrincipal.TextChanged += txtPrincipal_TextChanged;
+            // 
+            // dtgPrincipal
+            // 
+            dtgPrincipal.AllowUserToOrderColumns = true;
+            dtgPrincipal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgPrincipal.Columns.AddRange(new DataGridViewColumn[] { id_Ordem, DEC, BIN, OCT, HEX });
+            dtgPrincipal.Dock = DockStyle.Fill;
+            dtgPrincipal.Location = new Point(0, 0);
+            dtgPrincipal.Name = "dtgPrincipal";
+            dtgPrincipal.RowHeadersVisible = false;
+            dtgPrincipal.Size = new Size(415, 513);
+            dtgPrincipal.TabIndex = 1;
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // id_Ordem
+            // 
+            id_Ordem.HeaderText = "Ordem";
+            id_Ordem.Name = "id_Ordem";
+            // 
+            // DEC
+            // 
+            DEC.HeaderText = "Decimal";
+            DEC.Name = "DEC";
+            // 
+            // BIN
+            // 
+            BIN.HeaderText = "Binário";
+            BIN.Name = "BIN";
+            // 
+            // OCT
+            // 
+            OCT.HeaderText = "Octal";
+            OCT.Name = "OCT";
+            // 
+            // HEX
+            // 
+            HEX.HeaderText = "Hexadecimal";
+            HEX.Name = "HEX";
             // 
             // frmPrincipal
             // 
@@ -874,6 +949,7 @@
             toolStripPrincipal.ResumeLayout(false);
             toolStripPrincipal.PerformLayout();
             tabControlPrincipal.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
@@ -888,6 +964,7 @@
             ((System.ComponentModel.ISupportInitialize)nUpKeyLen).EndInit();
             ((System.ComponentModel.ISupportInitialize)nUpMultiAssimetric).EndInit();
             tabPage4.ResumeLayout(false);
+            tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nUpShakeBits).EndInit();
@@ -897,6 +974,7 @@
             splitContainerPrincipal.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).EndInit();
             splitContainerPrincipal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtgPrincipal).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -940,7 +1018,7 @@
         private ToolStripMenuItem eBSCSPToolStripMenuItem;
         private ToolStripMenuItem eBSCLIToolStripMenuItem;
         private ToolStripMenuItem eBSRNclassicToolStripMenuItem;
-        private TextBox textBox1;
+        private TextBox txtPrincipal;
         private TableLayoutPanel tableLayoutPanel4;
         private Label label5;
         private Label label4;
@@ -972,5 +1050,13 @@
         private NumericUpDown nUpMultiHash;
         private ComboBox cboHashAlgorithm;
         private Label label15;
+        private TableLayoutPanel tableLayoutPanel7;
+        private Button button1;
+        private DataGridView dtgPrincipal;
+        private DataGridViewTextBoxColumn id_Ordem;
+        private DataGridViewTextBoxColumn DEC;
+        private DataGridViewTextBoxColumn BIN;
+        private DataGridViewTextBoxColumn OCT;
+        private DataGridViewTextBoxColumn HEX;
     }
 }
