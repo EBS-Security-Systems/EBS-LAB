@@ -20,7 +20,7 @@ A aplicação do **EBS-LAB** diferencia-se do ***[Encryption's Builder Studio](h
 
 Uma nova funcionalidade é que você poderá implementar seu próprio serviço de encriptação na plataforma para testes.
 
-## 🧑‍💻 Contribua 💻
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Technologist.png" alt="Technologist" width="30" height="30" /> Contribua 💻
 
 Neste projeto de código aberto sua contribuíção é bem vinda! Podemos mesclar seu _Pull-Request_, independente do seu grau de conhecimento na área de tecnologia.
 
