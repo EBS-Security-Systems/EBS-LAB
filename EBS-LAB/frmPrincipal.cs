@@ -8,6 +8,8 @@ namespace EBS_LAB
     public partial class frmPrincipal : Form
     {
         public string user = "";
+        bool historico = true;
+        int h_index = 0;
         public frmPrincipal()
         {
             InitializeComponent();
@@ -84,14 +86,19 @@ namespace EBS_LAB
                 dtgPrincipal.Rows.Add(c.ToString(), decimalValue, binaryValue, octalValue, hexValue);
             }
 
+            if (historico)
+            {
+                dtgHistórico.Rows.Add(h_index, text);
+                h_index++;
+            }
         }
 
         private void dtgPrincipal_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {            
+        {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 1) // Ignora a coluna de caracteres
             {
                 AtualizarValores(e.RowIndex);
-            }            
+            }
         }
 
         private void AtualizarValores(int rowIndex)
@@ -170,6 +177,21 @@ namespace EBS_LAB
 
             updatedText = Encoding.UTF8.GetString(byteArray, 0, index);
             txtPrincipal.Text = updatedText;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            dtgHistórico.Rows.Clear();
+            h_index = 0;
+            MessageBox.Show("Histórico de texto limpo com sucesso!", "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dtgHistórico_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 1)
+            {
+                txtPrincipal.Text = dtgHistórico.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
         }
     }
 }

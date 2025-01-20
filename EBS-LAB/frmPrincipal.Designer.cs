@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             statusStripPrincipal = new StatusStrip();
             sLUser = new ToolStripStatusLabel();
@@ -101,6 +103,9 @@
             label9 = new Label();
             splitContainerPrincipal = new SplitContainer();
             txtPrincipal = new TextBox();
+            splitContainerDTGs = new SplitContainer();
+            dtgHistórico = new DataGridView();
+            btnClear = new Button();
             dtgPrincipal = new DataGridView();
             id_Ordem = new DataGridViewTextBoxColumn();
             DEC = new DataGridViewTextBoxColumn();
@@ -109,6 +114,8 @@
             HEX = new DataGridViewTextBoxColumn();
             contextMenuStrip1 = new ContextMenuStrip(components);
             toolTipPrincipal = new ToolTip(components);
+            ID = new DataGridViewTextBoxColumn();
+            Texto = new DataGridViewTextBoxColumn();
             statusStripPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             menuStripPrincipal.SuspendLayout();
@@ -134,6 +141,11 @@
             splitContainerPrincipal.Panel1.SuspendLayout();
             splitContainerPrincipal.Panel2.SuspendLayout();
             splitContainerPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainerDTGs).BeginInit();
+            splitContainerDTGs.Panel1.SuspendLayout();
+            splitContainerDTGs.Panel2.SuspendLayout();
+            splitContainerDTGs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgHistórico).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgPrincipal).BeginInit();
             SuspendLayout();
             // 
@@ -864,9 +876,9 @@
             // 
             // splitContainerPrincipal.Panel2
             // 
-            splitContainerPrincipal.Panel2.Controls.Add(dtgPrincipal);
+            splitContainerPrincipal.Panel2.Controls.Add(splitContainerDTGs);
             splitContainerPrincipal.Size = new Size(1350, 513);
-            splitContainerPrincipal.SplitterDistance = 931;
+            splitContainerPrincipal.SplitterDistance = 957;
             splitContainerPrincipal.TabIndex = 4;
             // 
             // txtPrincipal
@@ -880,19 +892,39 @@
             txtPrincipal.Multiline = true;
             txtPrincipal.Name = "txtPrincipal";
             txtPrincipal.ScrollBars = ScrollBars.Both;
-            txtPrincipal.Size = new Size(931, 513);
+            txtPrincipal.Size = new Size(957, 513);
             txtPrincipal.TabIndex = 0;
             txtPrincipal.WordWrap = false;
             txtPrincipal.TextChanged += txtPrincipal_TextChanged;
             // 
-            // dtgPrincipal
+            // splitContainerDTGs
             // 
-            dtgPrincipal.AllowUserToOrderColumns = true;
+            splitContainerDTGs.Dock = DockStyle.Fill;
+            splitContainerDTGs.Location = new Point(0, 0);
+            splitContainerDTGs.Name = "splitContainerDTGs";
+            splitContainerDTGs.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainerDTGs.Panel1
+            // 
+            splitContainerDTGs.Panel1.Controls.Add(dtgHistórico);
+            splitContainerDTGs.Panel1.Controls.Add(btnClear);
+            // 
+            // splitContainerDTGs.Panel2
+            // 
+            splitContainerDTGs.Panel2.Controls.Add(dtgPrincipal);
+            splitContainerDTGs.Size = new Size(389, 513);
+            splitContainerDTGs.SplitterDistance = 138;
+            splitContainerDTGs.TabIndex = 2;
+            // 
+            // dtgHistórico
+            // 
+            dtgHistórico.AllowUserToAddRows = false;
+            dtgHistórico.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dtgPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dtgPrincipal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtgPrincipal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgPrincipal.Columns.AddRange(new DataGridViewColumn[] { id_Ordem, DEC, BIN, OCT, HEX });
+            dtgHistórico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dtgHistórico.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgHistórico.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgHistórico.Columns.AddRange(new DataGridViewColumn[] { ID, Texto });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -900,12 +932,49 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dtgPrincipal.DefaultCellStyle = dataGridViewCellStyle2;
+            dtgHistórico.DefaultCellStyle = dataGridViewCellStyle2;
+            dtgHistórico.Dock = DockStyle.Fill;
+            dtgHistórico.Location = new Point(0, 33);
+            dtgHistórico.Name = "dtgHistórico";
+            dtgHistórico.ReadOnly = true;
+            dtgHistórico.RowHeadersVisible = false;
+            dtgHistórico.Size = new Size(389, 105);
+            dtgHistórico.TabIndex = 0;
+            dtgHistórico.CellContentClick += dtgHistórico_CellContentClick;
+            // 
+            // btnClear
+            // 
+            btnClear.Dock = DockStyle.Top;
+            btnClear.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClear.Location = new Point(0, 0);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(389, 33);
+            btnClear.TabIndex = 1;
+            btnClear.Text = "🚮 Limpar Histórico";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
+            // dtgPrincipal
+            // 
+            dtgPrincipal.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dtgPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dtgPrincipal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgPrincipal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgPrincipal.Columns.AddRange(new DataGridViewColumn[] { id_Ordem, DEC, BIN, OCT, HEX });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dtgPrincipal.DefaultCellStyle = dataGridViewCellStyle4;
             dtgPrincipal.Dock = DockStyle.Fill;
             dtgPrincipal.Location = new Point(0, 0);
             dtgPrincipal.Name = "dtgPrincipal";
             dtgPrincipal.RowHeadersVisible = false;
-            dtgPrincipal.Size = new Size(415, 513);
+            dtgPrincipal.Size = new Size(389, 371);
             dtgPrincipal.TabIndex = 1;
             dtgPrincipal.CellEndEdit += dtgPrincipal_CellEndEdit;
             dtgPrincipal.CellValueChanged += dtgPrincipal_CellValueChanged;
@@ -940,6 +1009,20 @@
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // ID
+            // 
+            ID.FillWeight = 30.456852F;
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // Texto
+            // 
+            Texto.FillWeight = 169.543152F;
+            Texto.HeaderText = "Texto";
+            Texto.Name = "Texto";
+            Texto.ReadOnly = true;
             // 
             // frmPrincipal
             // 
@@ -990,6 +1073,11 @@
             splitContainerPrincipal.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).EndInit();
             splitContainerPrincipal.ResumeLayout(false);
+            splitContainerDTGs.Panel1.ResumeLayout(false);
+            splitContainerDTGs.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainerDTGs).EndInit();
+            splitContainerDTGs.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtgHistórico).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtgPrincipal).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -1074,5 +1162,10 @@
         private DataGridViewTextBoxColumn BIN;
         private DataGridViewTextBoxColumn OCT;
         private DataGridViewTextBoxColumn HEX;
+        private SplitContainer splitContainerDTGs;
+        private DataGridView dtgHistórico;
+        private Button btnClear;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Texto;
     }
 }
