@@ -1,5 +1,7 @@
+using System;
 using System.Diagnostics;
 using System.Text;
+using System.Windows.Forms;
 
 namespace EBS_LAB
 {
@@ -82,6 +84,92 @@ namespace EBS_LAB
                 dtgPrincipal.Rows.Add(c.ToString(), decimalValue, binaryValue, octalValue, hexValue);
             }
 
+        }
+
+        private void dtgPrincipal_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {            
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 1) // Ignora a coluna de caracteres
+            {
+                AtualizarValores(e.RowIndex);
+            }            
+        }
+
+        private void AtualizarValores(int rowIndex)
+        {
+            // Obtém o valor da coluna editada
+            var cell = dtgPrincipal.Rows[rowIndex].Cells[dtgPrincipal.CurrentCell.ColumnIndex];
+            if (cell.Value != null)
+            {
+                string value = cell.Value.ToString();
+                int decimalValue;
+
+                switch (dtgPrincipal.CurrentCell.ColumnIndex)
+                {
+                    case 1: // Decimal
+                        if (int.TryParse(value, out decimalValue))
+                        {
+                            AtualizarColunas(rowIndex, decimalValue);
+                        }
+                        break;
+                    case 2: // Binário
+                        if (Convert.ToInt32(value, 2) is int binaryValue)
+                        {
+                            AtualizarColunas(rowIndex, binaryValue);
+                        }
+                        break;
+                    case 3: // Octal
+                        if (Convert.ToInt32(value, 8) is int octalValue)
+                        {
+                            AtualizarColunas(rowIndex, octalValue);
+                        }
+                        break;
+                    case 4: // Hexadecimal
+                        if (int.TryParse(value, System.Globalization.NumberStyles.HexNumber, null, out decimalValue))
+                        {
+                            AtualizarColunas(rowIndex, decimalValue);
+                        }
+                        break;
+                }
+            }
+        }
+
+        private void AtualizarColunas(int rowIndex, int decimalValue)
+        {
+            // Atualiza as colunas Binário, Hexadecimal e Octal
+            dtgPrincipal.Rows[rowIndex].Cells[2].Value = Convert.ToString(decimalValue, 2).PadLeft(8, '0'); // Binário
+            dtgPrincipal.Rows[rowIndex].Cells[3].Value = decimalValue.ToString("X2"); // Hexadecimal
+            dtgPrincipal.Rows[rowIndex].Cells[4].Value = Convert.ToString(decimalValue, 8); // Octal
+        }
+
+        private void dtgPrincipal_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            // Confirma a edição da célula
+            if (dtgPrincipal.IsCurrentCellDirty)
+            {
+                dtgPrincipal.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void dtgPrincipal_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            string updatedText = string.Empty;
+            byte[] byteArray = new byte[dtgPrincipal.Rows.Count];
+            int index = 0;
+
+            foreach (DataGridViewRow row in dtgPrincipal.Rows)
+            {
+                if (row.Cells[1].Value != null)
+                {
+                    // Tenta converter o valor da célula Decimal para um byte
+                    if (byte.TryParse(row.Cells[1].Value.ToString(), out byte byteValue))
+                    {
+                        byteArray[index++] = byteValue; // Armazena o byte no array
+                    }
+                }
+            }
+
+            updatedText = Encoding.UTF8.GetString(byteArray, 0, index);
+            txtPrincipal.Text = updatedText;
         }
     }
 }

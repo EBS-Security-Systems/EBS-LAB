@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             statusStripPrincipal = new StatusStrip();
             sLUser = new ToolStripStatusLabel();
@@ -100,13 +102,13 @@
             splitContainerPrincipal = new SplitContainer();
             txtPrincipal = new TextBox();
             dtgPrincipal = new DataGridView();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            toolTipPrincipal = new ToolTip(components);
             id_Ordem = new DataGridViewTextBoxColumn();
             DEC = new DataGridViewTextBoxColumn();
             BIN = new DataGridViewTextBoxColumn();
             OCT = new DataGridViewTextBoxColumn();
             HEX = new DataGridViewTextBoxColumn();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            toolTipPrincipal = new ToolTip(components);
             statusStripPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             menuStripPrincipal.SuspendLayout();
@@ -886,23 +888,32 @@
             // dtgPrincipal
             // 
             dtgPrincipal.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dtgPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dtgPrincipal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgPrincipal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgPrincipal.Columns.AddRange(new DataGridViewColumn[] { id_Ordem, DEC, BIN, OCT, HEX });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtgPrincipal.DefaultCellStyle = dataGridViewCellStyle2;
             dtgPrincipal.Dock = DockStyle.Fill;
             dtgPrincipal.Location = new Point(0, 0);
             dtgPrincipal.Name = "dtgPrincipal";
             dtgPrincipal.RowHeadersVisible = false;
             dtgPrincipal.Size = new Size(415, 513);
             dtgPrincipal.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            dtgPrincipal.CellEndEdit += dtgPrincipal_CellEndEdit;
+            dtgPrincipal.CellValueChanged += dtgPrincipal_CellValueChanged;
+            dtgPrincipal.CurrentCellDirtyStateChanged += dtgPrincipal_CurrentCellDirtyStateChanged;
             // 
             // id_Ordem
             // 
-            id_Ordem.HeaderText = "Ordem";
+            id_Ordem.HeaderText = "Caractere";
             id_Ordem.Name = "id_Ordem";
             // 
             // DEC
@@ -924,6 +935,11 @@
             // 
             HEX.HeaderText = "Hexadecimal";
             HEX.Name = "HEX";
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // frmPrincipal
             // 
