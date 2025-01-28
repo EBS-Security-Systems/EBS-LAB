@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
@@ -203,11 +204,25 @@ namespace EBS_LAB
         {
             if (!splitContainerDTGs.Panel1Collapsed)
             {
-                splitContainerDTGs.Panel1Collapsed = true;
+                if (splitContainerDTGs.Panel2Collapsed)
+                {
+                    splitContainerPrincipal.Panel2Collapsed = true;
+                }
+                else
+                {
+                    splitContainerDTGs.Panel1Collapsed = true;
+                }                
                 históricoToolStripMenuItem.Text = "Exibir Histórico";
             }
             else
             {
+                if (splitContainerPrincipal.Panel2Collapsed)
+                {
+                    splitContainerPrincipal.Panel2Collapsed = false;
+                    editorDeBytesToolStripMenuItem.Text = "Ocultar Editor de Bytes";    
+                }
+
+
                 splitContainerDTGs.Panel1Collapsed = false;
                 históricoToolStripMenuItem.Text = "Ocultar Histórico";
             }
@@ -217,12 +232,23 @@ namespace EBS_LAB
         {
             if (!splitContainerDTGs.Panel2Collapsed)
             {
-                splitContainerDTGs.Panel2Collapsed = true;
+                if (splitContainerDTGs.Panel1Collapsed)
+                {
+                    splitContainerPrincipal.Panel2Collapsed = true;
+                }
+                else
+                {
+                    splitContainerDTGs.Panel2Collapsed = true;
+                }   
                 editorDeBytesToolStripMenuItem.Text = "Exibir Editor de Bytes";
             }
             else
             {
-                splitContainerDTGs.Panel2Collapsed = false;
+                if (splitContainerPrincipal.Panel2Collapsed)
+                    splitContainerPrincipal.Panel2Collapsed = false;
+                else
+                    splitContainerDTGs.Panel2Collapsed = false;
+
                 editorDeBytesToolStripMenuItem.Text = "Ocultar Editor de Bytes";
             }
         }

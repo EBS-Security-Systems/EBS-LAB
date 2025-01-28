@@ -784,10 +784,10 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.Size = new Size(247, 116);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -802,6 +802,7 @@
             nUpShakeBits.Size = new Size(159, 23);
             nUpShakeBits.TabIndex = 13;
             nUpShakeBits.Value = new decimal(new int[] { 32, 0, 0, 0 });
+            nUpShakeBits.Visible = false;
             // 
             // cboHashExit
             // 
@@ -846,6 +847,7 @@
             label15.TabIndex = 9;
             label15.Text = "SHAKE (bits)";
             label15.TextAlign = ContentAlignment.MiddleLeft;
+            label15.Visible = false;
             // 
             // label13
             // 
