@@ -49,6 +49,8 @@
             eBSRNclassicToolStripMenuItem = new ToolStripMenuItem();
             eBSCSPToolStripMenuItem = new ToolStripMenuItem();
             eBSCLIToolStripMenuItem = new ToolStripMenuItem();
+            históricoToolStripMenuItem = new ToolStripMenuItem();
+            editorDeBytesToolStripMenuItem = new ToolStripMenuItem();
             toolStripPrincipal = new ToolStrip();
             btnLogin = new ToolStripButton();
             btnExitEbsWeb = new ToolStripButton();
@@ -105,6 +107,8 @@
             txtPrincipal = new TextBox();
             splitContainerDTGs = new SplitContainer();
             dtgHistórico = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            Texto = new DataGridViewTextBoxColumn();
             btnClear = new Button();
             dtgPrincipal = new DataGridView();
             id_Ordem = new DataGridViewTextBoxColumn();
@@ -114,8 +118,6 @@
             HEX = new DataGridViewTextBoxColumn();
             contextMenuStrip1 = new ContextMenuStrip(components);
             toolTipPrincipal = new ToolTip(components);
-            ID = new DataGridViewTextBoxColumn();
-            Texto = new DataGridViewTextBoxColumn();
             statusStripPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             menuStripPrincipal.SuspendLayout();
@@ -227,7 +229,7 @@
             // 
             // opçõesToolStripMenuItem
             // 
-            opçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { motoresDeEncriptaçãoToolStripMenuItem });
+            opçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { motoresDeEncriptaçãoToolStripMenuItem, históricoToolStripMenuItem, editorDeBytesToolStripMenuItem });
             opçõesToolStripMenuItem.Name = "opçõesToolStripMenuItem";
             opçõesToolStripMenuItem.Size = new Size(59, 20);
             opçõesToolStripMenuItem.Text = "Opções";
@@ -257,6 +259,20 @@
             eBSCLIToolStripMenuItem.Name = "eBSCLIToolStripMenuItem";
             eBSCLIToolStripMenuItem.Size = new Size(176, 22);
             eBSCLIToolStripMenuItem.Text = "EBS-CLI (beta)";
+            // 
+            // históricoToolStripMenuItem
+            // 
+            históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
+            históricoToolStripMenuItem.Size = new Size(199, 22);
+            históricoToolStripMenuItem.Text = "Ocultar Histórico";
+            históricoToolStripMenuItem.Click += históricoToolStripMenuItem_Click;
+            // 
+            // editorDeBytesToolStripMenuItem
+            // 
+            editorDeBytesToolStripMenuItem.Name = "editorDeBytesToolStripMenuItem";
+            editorDeBytesToolStripMenuItem.Size = new Size(199, 22);
+            editorDeBytesToolStripMenuItem.Text = "Ocultar Editor de Bytes";
+            editorDeBytesToolStripMenuItem.Click += editorDeBytesToolStripMenuItem_Click;
             // 
             // toolStripPrincipal
             // 
@@ -942,6 +958,20 @@
             dtgHistórico.TabIndex = 0;
             dtgHistórico.CellContentClick += dtgHistórico_CellContentClick;
             // 
+            // ID
+            // 
+            ID.FillWeight = 30.456852F;
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // Texto
+            // 
+            Texto.FillWeight = 169.543152F;
+            Texto.HeaderText = "Texto";
+            Texto.Name = "Texto";
+            Texto.ReadOnly = true;
+            // 
             // btnClear
             // 
             btnClear.Dock = DockStyle.Top;
@@ -1009,20 +1039,6 @@
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
-            // 
-            // ID
-            // 
-            ID.FillWeight = 30.456852F;
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // Texto
-            // 
-            Texto.FillWeight = 169.543152F;
-            Texto.HeaderText = "Texto";
-            Texto.Name = "Texto";
-            Texto.ReadOnly = true;
             // 
             // frmPrincipal
             // 
@@ -1167,5 +1183,7 @@
         private Button btnClear;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Texto;
+        private ToolStripMenuItem históricoToolStripMenuItem;
+        private ToolStripMenuItem editorDeBytesToolStripMenuItem;
     }
 }

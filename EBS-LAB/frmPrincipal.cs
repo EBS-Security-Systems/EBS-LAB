@@ -198,5 +198,33 @@ namespace EBS_LAB
                 txtPrincipal.Text = dtgHistórico.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
         }
+
+        private void históricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!splitContainerDTGs.Panel1Collapsed)
+            {
+                splitContainerDTGs.Panel1Collapsed = true;
+                históricoToolStripMenuItem.Text = "Exibir Histórico";
+            }
+            else
+            {
+                splitContainerDTGs.Panel1Collapsed = false;
+                históricoToolStripMenuItem.Text = "Ocultar Histórico";
+            }
+        }
+
+        private void editorDeBytesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!splitContainerDTGs.Panel2Collapsed)
+            {
+                splitContainerDTGs.Panel2Collapsed = true;
+                editorDeBytesToolStripMenuItem.Text = "Exibir Editor de Bytes";
+            }
+            else
+            {
+                splitContainerDTGs.Panel2Collapsed = false;
+                editorDeBytesToolStripMenuItem.Text = "Ocultar Editor de Bytes";
+            }
+        }
     }
 }
