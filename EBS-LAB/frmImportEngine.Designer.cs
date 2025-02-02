@@ -93,6 +93,7 @@
             Name = "frmImportEngine";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Importar Engine - EBS-LAB";
+            FormClosing += frmImportEngine_FormClosing;
             Load += frmImportEngine_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

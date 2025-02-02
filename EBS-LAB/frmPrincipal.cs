@@ -69,8 +69,10 @@ namespace EBS_LAB
 
         private void eBSCSPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmImportEngine Engine = new frmImportEngine();
+            frmImportEngine Engine = new frmImportEngine("EBS-CSP");
             Engine.ShowDialog();
+            string engine = Engine.engineName;
+            lblEngine.Text = "Motor de Encriptação: " + engine;
         }
 
         private void txtPrincipal_TextChanged(object sender, EventArgs e)
