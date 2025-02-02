@@ -69,7 +69,8 @@ namespace EBS_LAB
 
         private void eBSCSPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmImportEngine Engine = new frmImportEngine();
+            Engine.ShowDialog();
         }
 
         private void txtPrincipal_TextChanged(object sender, EventArgs e)
