@@ -13,6 +13,7 @@ namespace EBS_LAB
     public partial class frmImportEngine : Form
     {
         public string engineName { get; private set; } = "";
+        string[] encryptions;
         public frmImportEngine(string engineName)
         {
             InitializeComponent();
@@ -22,6 +23,13 @@ namespace EBS_LAB
         private void frmImportEngine_Load(object sender, EventArgs e)
         {
             this.Text = "Importar Engine " + engineName + " - EBS-LAB";
+            switch (engineName)
+            {
+                case "EBS-CSP":
+                    // Consultar a API do EBS-CSP e listar os mecanismos disponíveis
+                default:
+                    break;
+            }
         }
 
         private void frmImportEngine_FormClosing(object sender, FormClosingEventArgs e)

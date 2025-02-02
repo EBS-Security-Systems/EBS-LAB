@@ -244,20 +244,20 @@
             // eBSRNclassicToolStripMenuItem
             // 
             eBSRNclassicToolStripMenuItem.Name = "eBSRNclassicToolStripMenuItem";
-            eBSRNclassicToolStripMenuItem.Size = new Size(180, 22);
+            eBSRNclassicToolStripMenuItem.Size = new Size(176, 22);
             eBSRNclassicToolStripMenuItem.Text = "EBS-RN (classic)";
             // 
             // eBSCSPToolStripMenuItem
             // 
             eBSCSPToolStripMenuItem.Name = "eBSCSPToolStripMenuItem";
-            eBSCSPToolStripMenuItem.Size = new Size(180, 22);
+            eBSCSPToolStripMenuItem.Size = new Size(176, 22);
             eBSCSPToolStripMenuItem.Text = "EBS-CSP (standard)";
             eBSCSPToolStripMenuItem.Click += eBSCSPToolStripMenuItem_Click;
             // 
             // eBSCLIToolStripMenuItem
             // 
             eBSCLIToolStripMenuItem.Name = "eBSCLIToolStripMenuItem";
-            eBSCLIToolStripMenuItem.Size = new Size(180, 22);
+            eBSCLIToolStripMenuItem.Size = new Size(176, 22);
             eBSCLIToolStripMenuItem.Text = "EBS-CLI (beta)";
             // 
             // históricoToolStripMenuItem
@@ -896,7 +896,7 @@
             // 
             splitContainerPrincipal.Panel2.Controls.Add(splitContainerDTGs);
             splitContainerPrincipal.Size = new Size(1350, 513);
-            splitContainerPrincipal.SplitterDistance = 957;
+            splitContainerPrincipal.SplitterDistance = 946;
             splitContainerPrincipal.TabIndex = 4;
             // 
             // txtPrincipal
@@ -910,7 +910,7 @@
             txtPrincipal.Multiline = true;
             txtPrincipal.Name = "txtPrincipal";
             txtPrincipal.ScrollBars = ScrollBars.Both;
-            txtPrincipal.Size = new Size(957, 513);
+            txtPrincipal.Size = new Size(946, 513);
             txtPrincipal.TabIndex = 0;
             txtPrincipal.WordWrap = false;
             txtPrincipal.TextChanged += txtPrincipal_TextChanged;
@@ -930,7 +930,7 @@
             // splitContainerDTGs.Panel2
             // 
             splitContainerDTGs.Panel2.Controls.Add(dtgPrincipal);
-            splitContainerDTGs.Size = new Size(389, 513);
+            splitContainerDTGs.Size = new Size(400, 513);
             splitContainerDTGs.SplitterDistance = 138;
             splitContainerDTGs.TabIndex = 2;
             // 
@@ -956,7 +956,7 @@
             dtgHistórico.Name = "dtgHistórico";
             dtgHistórico.ReadOnly = true;
             dtgHistórico.RowHeadersVisible = false;
-            dtgHistórico.Size = new Size(389, 105);
+            dtgHistórico.Size = new Size(400, 105);
             dtgHistórico.TabIndex = 0;
             dtgHistórico.CellContentClick += dtgHistórico_CellContentClick;
             // 
@@ -980,7 +980,7 @@
             btnClear.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClear.Location = new Point(0, 0);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(389, 33);
+            btnClear.Size = new Size(400, 33);
             btnClear.TabIndex = 1;
             btnClear.Text = "🚮 Limpar Histórico";
             btnClear.UseVisualStyleBackColor = true;
@@ -1006,7 +1006,7 @@
             dtgPrincipal.Location = new Point(0, 0);
             dtgPrincipal.Name = "dtgPrincipal";
             dtgPrincipal.RowHeadersVisible = false;
-            dtgPrincipal.Size = new Size(389, 371);
+            dtgPrincipal.Size = new Size(400, 371);
             dtgPrincipal.TabIndex = 1;
             dtgPrincipal.CellEndEdit += dtgPrincipal_CellEndEdit;
             dtgPrincipal.CellValueChanged += dtgPrincipal_CellValueChanged;
