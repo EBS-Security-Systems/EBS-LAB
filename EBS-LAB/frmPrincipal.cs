@@ -8,7 +8,7 @@ namespace EBS_LAB
 {
     public partial class frmPrincipal : Form
     {
-        public string user = "";
+        public string user = "", engine = "";
         bool historico = true;
         int h_index = 0;
         public frmPrincipal()
@@ -67,11 +67,19 @@ namespace EBS_LAB
 
         }
 
+        private void eBSRNclassicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmImportEngine Engine = new frmImportEngine("EBS-RN");
+            Engine.ShowDialog();
+            engine = Engine.engineName;
+            lblEngine.Text = "Motor de Encriptação: " + engine;
+        }
+
         private void eBSCSPToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmImportEngine Engine = new frmImportEngine("EBS-CSP");
             Engine.ShowDialog();
-            string engine = Engine.engineName;
+            engine = Engine.engineName;
             lblEngine.Text = "Motor de Encriptação: " + engine;
         }
 
@@ -214,7 +222,7 @@ namespace EBS_LAB
                 else
                 {
                     splitContainerDTGs.Panel1Collapsed = true;
-                }                
+                }
                 históricoToolStripMenuItem.Text = "Exibir Histórico";
             }
             else
@@ -222,7 +230,7 @@ namespace EBS_LAB
                 if (splitContainerPrincipal.Panel2Collapsed)
                 {
                     splitContainerPrincipal.Panel2Collapsed = false;
-                    editorDeBytesToolStripMenuItem.Text = "Ocultar Editor de Bytes";    
+                    editorDeBytesToolStripMenuItem.Text = "Ocultar Editor de Bytes";
                 }
 
 
@@ -242,7 +250,7 @@ namespace EBS_LAB
                 else
                 {
                     splitContainerDTGs.Panel2Collapsed = true;
-                }   
+                }
                 editorDeBytesToolStripMenuItem.Text = "Exibir Editor de Bytes";
             }
             else
@@ -254,6 +262,6 @@ namespace EBS_LAB
 
                 editorDeBytesToolStripMenuItem.Text = "Ocultar Editor de Bytes";
             }
-        }
+        }        
     }
 }
