@@ -15,7 +15,7 @@ using System.Windows.Forms;
 // - CodesB64.cs --> É incompatível, será removida se não tiver uso
 // O EBS-RN inteiro original ainda não foi disponibilizado por completo no Git-Hub
 #endregion
-using EBS_RN;
+// using EBS_RN;
 
 namespace EBS_LAB
 {
