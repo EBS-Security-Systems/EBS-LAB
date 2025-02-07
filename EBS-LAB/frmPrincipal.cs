@@ -4,8 +4,22 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
+#region Referência de Projeto EBS-RN
+// A referência de projeto adicionado EBS-RN (Regra de Negócio) é um projeto essencial a ser utilizado
+// Seu significado é importante pois ele é uma reciclagem do Encryption's Builder Studio (EBS) 
+// Apenas 2 classes do EBS-RN são utilizadas aqui, com algumas alterações
+// + Crypts.cs
+// + Hashs.cs
+// As classes restantes do EBS-RN ainda não são utilizadas aqui
+// - Bools.cs  --> Está incompleta, está reservada para uso futuro
+// - CodesB64.cs --> É incompatível, será removida se não tiver uso
+// O EBS-RN inteiro original ainda não foi disponibilizado por completo no Git-Hub
+#endregion
+using EBS_RN;
+
 namespace EBS_LAB
 {
+
     public partial class frmPrincipal : Form
     {
         public string user = "", engine = "";
