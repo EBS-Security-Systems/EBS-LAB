@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBS-LAB", "EBS-LAB\EBS-LAB.csproj", "{F72CC586-9FD0-40FB-A852-7B2FE7304459}"
-	ProjectSection(ProjectDependencies) = postProject
-		{589994A4-7EC4-4397-856F-2EA22FA53726} = {589994A4-7EC4-4397-856F-2EA22FA53726}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBS-RN", "EBS-RN\EBS-RN.csproj", "{589994A4-7EC4-4397-856F-2EA22FA53726}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +15,6 @@ Global
 		{F72CC586-9FD0-40FB-A852-7B2FE7304459}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F72CC586-9FD0-40FB-A852-7B2FE7304459}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F72CC586-9FD0-40FB-A852-7B2FE7304459}.Release|Any CPU.Build.0 = Release|Any CPU
-		{589994A4-7EC4-4397-856F-2EA22FA53726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{589994A4-7EC4-4397-856F-2EA22FA53726}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{589994A4-7EC4-4397-856F-2EA22FA53726}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{589994A4-7EC4-4397-856F-2EA22FA53726}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
