@@ -78,7 +78,7 @@ namespace EBS_LAB
 
         private void btnEbsCli_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void eBSRNclassicToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,6 +92,14 @@ namespace EBS_LAB
         private void eBSCSPToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmImportEngine Engine = new frmImportEngine("EBS-CSP");
+            Engine.ShowDialog();
+            engine = Engine.engineName;
+            lblEngine.Text = "Motor de Encriptação: " + engine;
+        }
+
+        private void eBSCLIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmImportEngine Engine = new frmImportEngine("EBS-CLI");
             Engine.ShowDialog();
             engine = Engine.engineName;
             lblEngine.Text = "Motor de Encriptação: " + engine;
@@ -276,6 +284,6 @@ namespace EBS_LAB
 
                 editorDeBytesToolStripMenuItem.Text = "Ocultar Editor de Bytes";
             }
-        }        
+        }
     }
 }

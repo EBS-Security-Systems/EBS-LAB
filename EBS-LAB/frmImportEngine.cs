@@ -51,24 +51,32 @@ namespace EBS_LAB
         
         private async void frmImportEngine_Load(object sender, EventArgs e)
         {
-            string jsonResponse;
+            string jsonResponseSymmetrics, jsonResponseAsymmetrics, jsonResponseHashs;
             this.Text = "Importar Engine " + engineName + " - EBS-LAB";
             switch (engineName.ToString())
             {
                 case "EBS-CSP":
                     // Consultar a API do EBS-CSP e listar os mecanismos disponíveis
-                    jsonResponse = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/symmetric");
-                    MessageBox.Show(jsonResponse, "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    jsonResponseSymmetrics = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/symmetric");
+                    MessageBox.Show(jsonResponseSymmetrics, "EBS-LAB - Debug for Release", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    jsonResponse = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/asymmetric");
-                    MessageBox.Show(jsonResponse, "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    jsonResponseAsymmetrics = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/asymmetric");
+                    MessageBox.Show(jsonResponseAsymmetrics, "EBS-LAB - Debug for Release", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    jsonResponse = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/hashs");
-                    MessageBox.Show(jsonResponse, "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    jsonResponseHashs = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/hashs");
+                    MessageBox.Show(jsonResponseHashs, "EBS-LAB - Debug for Release", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
+                    break;
+                case "EBS-CLI":
+                   MessageBox.Show("A comunicação com esse tipo de Engine ainda é indisponível!", "EBS-LAB - Debug for Release", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case "EBS-RN":
+                    MessageBox.Show("A comunicação com esse tipo de Engine ainda está em fase de testes!", "EBS-LAB - Debug for Release", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 default:
-                    break;
+                    MessageBox.Show("Engine não reconhecida! Veja o repositório da aplicação para mais detalhes:\nhttps://github.com/EBS-Security-Systems/ebs-lab", "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;                
             }
+            this.Close();
         }
 
         private void frmImportEngine_FormClosing(object sender, FormClosingEventArgs e)
