@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -60,6 +61,9 @@ namespace EBS_LAB
                     MessageBox.Show(jsonResponse, "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     jsonResponse = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/asymmetric");
+                    MessageBox.Show(jsonResponse, "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    jsonResponse = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/hashs");
                     MessageBox.Show(jsonResponse, "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
