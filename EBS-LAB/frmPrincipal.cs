@@ -78,7 +78,7 @@ namespace EBS_LAB
 
         private void btnEbsCli_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void eBSRNclassicToolStripMenuItem_Click(object sender, EventArgs e)
