@@ -22,15 +22,12 @@ namespace EBS_LAB
         }
 
         // Retorna da API os algoritmos de criptografia simétrica disponíveis
-        static async Task<string> GetSymmetricAlgorithmsAsync()
+        static async Task<string> GetAlgorithmsFromCSP(string url)
         {
             using (HttpClient client = new HttpClient())
             {
                 try
                 {
-                    // Definindo a URL da API
-                    string url = "https://ebs-csp.vercel.app/symmetric";
-
                     // Realizando a requisição GET
                     HttpResponseMessage response = await client.GetAsync(url);
 
@@ -50,6 +47,7 @@ namespace EBS_LAB
             }
         }
 
+        
         private async void frmImportEngine_Load(object sender, EventArgs e)
         {
             string jsonResponse;
@@ -58,7 +56,10 @@ namespace EBS_LAB
             {
                 case "EBS-CSP":
                     // Consultar a API do EBS-CSP e listar os mecanismos disponíveis
-                    jsonResponse = await GetSymmetricAlgorithmsAsync();
+                    jsonResponse = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/symmetric");
+                    MessageBox.Show(jsonResponse, "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    jsonResponse = await GetAlgorithmsFromCSP("https://ebs-csp.vercel.app/asymmetric");
                     MessageBox.Show(jsonResponse, "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
