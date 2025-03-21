@@ -1,4 +1,24 @@
-# _Encryption's Builder Studio_ - Laboratório
+<h1 align=center>
+  
+_Encryption's Builder Studio_ - Laboratório
+
+</h1>
+
+<div align=center>
+
+[![GitHub issues](https://img.shields.io/github/issues/EBS-Security-Systems/EBS-LAB)](https://github.com/EBS-Security-Systems/EBS-LAB/issues)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/EBS-Security-Systems/EBS-LAB)](https://github.com/EBS-Security-Systems/EBS-LAB/pulls)
+[![GitHub stars](https://img.shields.io/github/stars/EBS-Security-Systems/EBS-LAB)](https://github.com/EBS-Security-Systems/EBS-LAB/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/EBS-Security-Systems/EBS-LAB)](https://github.com/EBS-Security-Systems/EBS-LAB/network)
+![GitHub contributors](https://img.shields.io/github/contributors/EBS-Security-Systems/EBS-LAB)
+[![GitHub last commit](https://img.shields.io/github/last-commit/EBS-Security-Systems/EBS-LAB)](https://github.com/EBS-Security-Systems/EBS-LAB/commits/main)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/EBS-Security-Systems/EBS-LAB/.github/workflows/dotnet-v8-desktop.yml?branch=master)](https://github.com/EBS-Security-Systems/EBS-LAB/actions)
+<!--[![GitHub release (latest by date)](https://img.shields.io/github/v/release/EBS-Security-Systems/EBS-LAB)](https://github.com/EBS-Security-Systems/EBS-LAB/releases)-->
+<!--[![GitHub](https://img.shields.io/github/license/EBS-Security-Systems/EBS-LAB)](https://github.com/EBS-Security-Systems/EBS-LAB/blob/main/LICENSE)
+[![GitHub repo size](https://img.shields.io/github/repo-size/EBS-Security-Systems/EBS-LAB)](https://github.com/EBS-Security-Systems/EBS-LAB)
+[![GitHub top language](https://img.shields.io/github/languages/top/EBS-Security-Systems/EBS-LAB)](https://github.com/EBS-Security-Systems/EBS-LAB)-->
+
+</div>
 
 > Nota: 🚧 Aplicação em construção 🏗️
 
