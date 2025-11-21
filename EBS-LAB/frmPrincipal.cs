@@ -37,7 +37,7 @@ namespace EBS_LAB
 
         public void load_Itens_Symetric(string[] text)
         {
-            cboAlgorithm.Items.Add(text);
+            cboAlgorithm.Items.AddRange(text);
         }
 
         private void btnRepoEBS_Lab_Click(object sender, EventArgs e)
