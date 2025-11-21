@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace EBS_RN
 {
+    // (@thiagosousa81) Essa classe é um registro antigo de começo do aprendizado sobre codificação de dados
+    // (@thiagosousa81) Foi criada para uma das primeiras versões aplicativo do Encryption's Builder Studio
+    // (@thiagosousa81) Aqui ela não será utilizada mais, mas está mantida no repositório como uma relíquia antiga
+    // (@thiagosousa81) Acredito que ela não vai aumentar o tamanho final do aplicativo 😅
     public class CodesB64
     {
         #region Morse
