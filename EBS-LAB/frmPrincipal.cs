@@ -285,5 +285,34 @@ namespace EBS_LAB
                 editorDeBytesToolStripMenuItem.Text = "Ocultar Editor de Bytes";
             }
         }
+
+        #region Encriptação Simétrica
+        private void btnEncrypt_S_Click(object sender, EventArgs e)
+        {
+            switch (engine)
+            {
+                case "EBS-RN":
+                    // Implementar encriptação simétrica usando EBS-RN
+                    break;
+                case "EBS-CSP":
+                    // Implementar encriptação simétrica usando EBS-CSP
+                    break;
+                case "EBS-CLI":
+                    // Implementar encriptação simétrica usando EBS-CLI
+                    break;
+                case "":
+                    MessageBox.Show("Nenhum motor de encriptação selecionado. Por favor, importe um motor.", "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                default:
+                    MessageBox.Show("Motor de encriptação não identificado! Favor abrir uma issue no repositório do Git-Hub, descrevendo como isso ocorreu!", "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+        }
+
+        private void btnDecrypt_S_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion        
     }
 }

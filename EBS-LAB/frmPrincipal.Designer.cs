@@ -244,21 +244,21 @@
             // eBSRNclassicToolStripMenuItem
             // 
             eBSRNclassicToolStripMenuItem.Name = "eBSRNclassicToolStripMenuItem";
-            eBSRNclassicToolStripMenuItem.Size = new Size(180, 22);
+            eBSRNclassicToolStripMenuItem.Size = new Size(176, 22);
             eBSRNclassicToolStripMenuItem.Text = "EBS-RN (classic)";
             eBSRNclassicToolStripMenuItem.Click += eBSRNclassicToolStripMenuItem_Click;
             // 
             // eBSCSPToolStripMenuItem
             // 
             eBSCSPToolStripMenuItem.Name = "eBSCSPToolStripMenuItem";
-            eBSCSPToolStripMenuItem.Size = new Size(180, 22);
+            eBSCSPToolStripMenuItem.Size = new Size(176, 22);
             eBSCSPToolStripMenuItem.Text = "EBS-CSP (standard)";
             eBSCSPToolStripMenuItem.Click += eBSCSPToolStripMenuItem_Click;
             // 
             // eBSCLIToolStripMenuItem
             // 
             eBSCLIToolStripMenuItem.Name = "eBSCLIToolStripMenuItem";
-            eBSCLIToolStripMenuItem.Size = new Size(180, 22);
+            eBSCLIToolStripMenuItem.Size = new Size(176, 22);
             eBSCLIToolStripMenuItem.Text = "EBS-CLI (beta)";
             eBSCLIToolStripMenuItem.Click += eBSCLIToolStripMenuItem_Click;
             // 
@@ -389,6 +389,7 @@
             btnEncrypt_S.TabIndex = 0;
             btnEncrypt_S.Text = "Criptografar";
             btnEncrypt_S.UseVisualStyleBackColor = true;
+            btnEncrypt_S.Click += btnEncrypt_S_Click;
             // 
             // btnDecrypt_S
             // 
@@ -399,6 +400,7 @@
             btnDecrypt_S.TabIndex = 1;
             btnDecrypt_S.Text = "Descriptografar";
             btnDecrypt_S.UseVisualStyleBackColor = true;
+            btnDecrypt_S.Click += btnDecrypt_S_Click;
             // 
             // tableLayoutPanel2
             // 
