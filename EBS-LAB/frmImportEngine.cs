@@ -15,14 +15,19 @@ namespace EBS_LAB
     {
         public string engineName { get; private set; } = "";
         string[] encryptions;
+
+        private frmPrincipal formPrincipal;
         
-        public frmImportEngine(string engineName)
+        public frmImportEngine(string engineName, frmPrincipal frm)
         {
             InitializeComponent();
-            this.engineName = engineName;               
+            this.engineName = engineName;
+            this.formPrincipal = frm;
         }
 
-        // Retorna da API os algoritmos de criptografia simétrica disponíveis
+            // C#
+        private frmPrincipal principalForm;
+    // Retorna da API os algoritmos de criptografia simétrica disponíveis
         static async Task<string> GetAlgorithmsFromCSP(string url)
         {
             using (HttpClient client = new HttpClient())
@@ -67,10 +72,11 @@ namespace EBS_LAB
                     MessageBox.Show(jsonResponseHashs, "EBS-LAB - Debug for Release", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
                     break;
                 case "EBS-CLI":
-                   MessageBox.Show("A comunicação com esse tipo de Engine ainda é indisponível!", "EBS-LAB - Debug for Release", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("A comunicação com esse tipo de Engine ainda é indisponível!", "EBS-LAB - Debug for Release", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case "EBS-RN":
-                    MessageBox.Show("A comunicação com esse tipo de Engine ainda está em fase de testes!", "EBS-LAB - Debug for Release", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    formPrincipal.load_Itens_Symetric(["AES", "DES", "Triple-DES", "RC2"]);
+                    MessageBox.Show("Engine EBS-RN carregada com sucesso!", "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
                     MessageBox.Show("Engine não reconhecida! Veja o repositório da aplicação para mais detalhes:\nhttps://github.com/EBS-Security-Systems/ebs-lab", "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Error);

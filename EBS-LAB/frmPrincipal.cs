@@ -35,6 +35,11 @@ namespace EBS_LAB
             toolTipPrincipal.SetToolTip(nUpMultiAssimetric, "O efeito de encriptação em cascata não é viável para alguns algoritmos!");
         }
 
+        public void load_Itens_Symetric(string[] text)
+        {
+            cboAlgorithm.Items.Add(text);
+        }
+
         private void btnRepoEBS_Lab_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo(@"https://github.com/EBS-Security-Systems/EBS-LAB") { UseShellExecute = true });
@@ -83,7 +88,7 @@ namespace EBS_LAB
 
         private void eBSRNclassicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmImportEngine Engine = new frmImportEngine("EBS-RN");
+            frmImportEngine Engine = new frmImportEngine("EBS-RN", this);
             Engine.ShowDialog();
             engine = Engine.engineName;
             lblEngine.Text = "Motor de Encriptação: " + engine;
@@ -91,7 +96,7 @@ namespace EBS_LAB
 
         private void eBSCSPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmImportEngine Engine = new frmImportEngine("EBS-CSP");
+            frmImportEngine Engine = new frmImportEngine("EBS-CSP", this);
             Engine.ShowDialog();
             engine = Engine.engineName;
             lblEngine.Text = "Motor de Encriptação: " + engine;
@@ -99,7 +104,7 @@ namespace EBS_LAB
 
         private void eBSCLIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmImportEngine Engine = new frmImportEngine("EBS-CLI");
+            frmImportEngine Engine = new frmImportEngine("EBS-CLI", this);
             Engine.ShowDialog();
             engine = Engine.engineName;
             lblEngine.Text = "Motor de Encriptação: " + engine;
@@ -313,6 +318,6 @@ namespace EBS_LAB
         {
 
         }
-        #endregion        
+        #endregion                    
     }
 }
