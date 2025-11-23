@@ -904,7 +904,7 @@
             // 
             splitContainerPrincipal.Panel2.Controls.Add(splitContainerDTGs);
             splitContainerPrincipal.Size = new Size(884, 345);
-            splitContainerPrincipal.SplitterDistance = 619;
+            splitContainerPrincipal.SplitterDistance = 493;
             splitContainerPrincipal.TabIndex = 4;
             // 
             // txtPrincipal
@@ -918,7 +918,7 @@
             txtPrincipal.Multiline = true;
             txtPrincipal.Name = "txtPrincipal";
             txtPrincipal.ScrollBars = ScrollBars.Both;
-            txtPrincipal.Size = new Size(619, 345);
+            txtPrincipal.Size = new Size(493, 345);
             txtPrincipal.TabIndex = 0;
             txtPrincipal.WordWrap = false;
             txtPrincipal.TextChanged += txtPrincipal_TextChanged;
@@ -938,7 +938,7 @@
             // splitContainerDTGs.Panel2
             // 
             splitContainerDTGs.Panel2.Controls.Add(dtgPrincipal);
-            splitContainerDTGs.Size = new Size(261, 345);
+            splitContainerDTGs.Size = new Size(387, 345);
             splitContainerDTGs.SplitterDistance = 92;
             splitContainerDTGs.TabIndex = 2;
             // 
@@ -980,7 +980,7 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dtgHistórico.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dtgHistórico.RowHeadersVisible = false;
-            dtgHistórico.Size = new Size(261, 59);
+            dtgHistórico.Size = new Size(387, 59);
             dtgHistórico.TabIndex = 0;
             dtgHistórico.CellContentClick += dtgHistórico_CellContentClick;
             // 
@@ -1004,7 +1004,7 @@
             btnClear.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClear.Location = new Point(0, 0);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(261, 33);
+            btnClear.Size = new Size(387, 33);
             btnClear.TabIndex = 1;
             btnClear.Text = "🚮 Limpar Histórico";
             btnClear.UseVisualStyleBackColor = true;
@@ -1046,7 +1046,7 @@
             dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
             dtgPrincipal.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dtgPrincipal.RowHeadersVisible = false;
-            dtgPrincipal.Size = new Size(261, 249);
+            dtgPrincipal.Size = new Size(387, 249);
             dtgPrincipal.TabIndex = 1;
             dtgPrincipal.CellEndEdit += dtgPrincipal_CellEndEdit;
             dtgPrincipal.CellValueChanged += dtgPrincipal_CellValueChanged;
