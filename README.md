@@ -23,6 +23,8 @@ _Encryption's Builder Studio_ - Laboratório
 > Nota: 🚧 Aplicação em construção 🏗️
 
 <h3 align=center> 
+
+![dallyPrint](/dallyPrint.png)
   
   📥 Instale versões de teste nos atefatos em **[Actions](https://github.com/EBS-Security-Systems/EBS-LAB/actions)**
 

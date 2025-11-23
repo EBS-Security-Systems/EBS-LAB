@@ -33,6 +33,10 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             statusStripPrincipal = new StatusStrip();
             sLUser = new ToolStripStatusLabel();
@@ -154,9 +158,9 @@
             // statusStripPrincipal
             // 
             statusStripPrincipal.Items.AddRange(new ToolStripItem[] { sLUser, lblEngine });
-            statusStripPrincipal.Location = new Point(0, 707);
+            statusStripPrincipal.Location = new Point(0, 539);
             statusStripPrincipal.Name = "statusStripPrincipal";
-            statusStripPrincipal.Size = new Size(1350, 22);
+            statusStripPrincipal.Size = new Size(884, 22);
             statusStripPrincipal.TabIndex = 0;
             statusStripPrincipal.Text = "statusStrip1";
             // 
@@ -192,7 +196,7 @@
             menuStripPrincipal.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, opçõesToolStripMenuItem });
             menuStripPrincipal.Location = new Point(0, 0);
             menuStripPrincipal.Name = "menuStripPrincipal";
-            menuStripPrincipal.Size = new Size(1350, 24);
+            menuStripPrincipal.Size = new Size(884, 24);
             menuStripPrincipal.TabIndex = 2;
             menuStripPrincipal.Text = "menuStrip1";
             // 
@@ -282,7 +286,7 @@
             toolStripPrincipal.Items.AddRange(new ToolStripItem[] { btnLogin, btnExitEbsWeb, btnEbsCli, toolStripSeparator1, btnRepoEBS_Lab });
             toolStripPrincipal.Location = new Point(0, 24);
             toolStripPrincipal.Name = "toolStripPrincipal";
-            toolStripPrincipal.Size = new Size(1350, 26);
+            toolStripPrincipal.Size = new Size(884, 26);
             toolStripPrincipal.TabIndex = 0;
             // 
             // btnLogin
@@ -338,7 +342,7 @@
             tabControlPrincipal.Location = new Point(0, 50);
             tabControlPrincipal.Name = "tabControlPrincipal";
             tabControlPrincipal.SelectedIndex = 0;
-            tabControlPrincipal.Size = new Size(1350, 144);
+            tabControlPrincipal.Size = new Size(884, 144);
             tabControlPrincipal.TabIndex = 3;
             // 
             // tabPage1
@@ -360,7 +364,7 @@
             tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1342, 116);
+            tabPage2.Size = new Size(876, 116);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Criptografia Simétrica";
             // 
@@ -372,7 +376,7 @@
             tableLayoutPanel3.Controls.Add(btnEncrypt_S, 0, 0);
             tableLayoutPanel3.Controls.Add(btnDecrypt_S, 0, 1);
             tableLayoutPanel3.Dock = DockStyle.Right;
-            tableLayoutPanel3.Location = new Point(1196, 3);
+            tableLayoutPanel3.Location = new Point(730, 3);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -899,8 +903,8 @@
             // splitContainerPrincipal.Panel2
             // 
             splitContainerPrincipal.Panel2.Controls.Add(splitContainerDTGs);
-            splitContainerPrincipal.Size = new Size(1350, 513);
-            splitContainerPrincipal.SplitterDistance = 946;
+            splitContainerPrincipal.Size = new Size(884, 345);
+            splitContainerPrincipal.SplitterDistance = 619;
             splitContainerPrincipal.TabIndex = 4;
             // 
             // txtPrincipal
@@ -914,7 +918,7 @@
             txtPrincipal.Multiline = true;
             txtPrincipal.Name = "txtPrincipal";
             txtPrincipal.ScrollBars = ScrollBars.Both;
-            txtPrincipal.Size = new Size(946, 513);
+            txtPrincipal.Size = new Size(619, 345);
             txtPrincipal.TabIndex = 0;
             txtPrincipal.WordWrap = false;
             txtPrincipal.TextChanged += txtPrincipal_TextChanged;
@@ -934,8 +938,8 @@
             // splitContainerDTGs.Panel2
             // 
             splitContainerDTGs.Panel2.Controls.Add(dtgPrincipal);
-            splitContainerDTGs.Size = new Size(400, 513);
-            splitContainerDTGs.SplitterDistance = 138;
+            splitContainerDTGs.Size = new Size(261, 345);
+            splitContainerDTGs.SplitterDistance = 92;
             splitContainerDTGs.TabIndex = 2;
             // 
             // dtgHistórico
@@ -945,22 +949,38 @@
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dtgHistórico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dtgHistórico.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtgHistórico.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgHistórico.Columns.AddRange(new DataGridViewColumn[] { ID, Texto });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dtgHistórico.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dtgHistórico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dtgHistórico.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgHistórico.Columns.AddRange(new DataGridViewColumn[] { ID, Texto });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dtgHistórico.DefaultCellStyle = dataGridViewCellStyle3;
             dtgHistórico.Dock = DockStyle.Fill;
             dtgHistórico.Location = new Point(0, 33);
             dtgHistórico.Name = "dtgHistórico";
             dtgHistórico.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dtgHistórico.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dtgHistórico.RowHeadersVisible = false;
-            dtgHistórico.Size = new Size(400, 105);
+            dtgHistórico.Size = new Size(261, 59);
             dtgHistórico.TabIndex = 0;
             dtgHistórico.CellContentClick += dtgHistórico_CellContentClick;
             // 
@@ -984,7 +1004,7 @@
             btnClear.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClear.Location = new Point(0, 0);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(400, 33);
+            btnClear.Size = new Size(261, 33);
             btnClear.TabIndex = 1;
             btnClear.Text = "🚮 Limpar Histórico";
             btnClear.UseVisualStyleBackColor = true;
@@ -993,24 +1013,40 @@
             // dtgPrincipal
             // 
             dtgPrincipal.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dtgPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dtgPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dtgPrincipal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dtgPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dtgPrincipal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgPrincipal.Columns.AddRange(new DataGridViewColumn[] { id_Ordem, DEC, BIN, OCT, HEX });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dtgPrincipal.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Window;
+            dataGridViewCellStyle7.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dtgPrincipal.DefaultCellStyle = dataGridViewCellStyle7;
             dtgPrincipal.Dock = DockStyle.Fill;
             dtgPrincipal.Location = new Point(0, 0);
             dtgPrincipal.Name = "dtgPrincipal";
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dtgPrincipal.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dtgPrincipal.RowHeadersVisible = false;
-            dtgPrincipal.Size = new Size(400, 371);
+            dtgPrincipal.Size = new Size(261, 249);
             dtgPrincipal.TabIndex = 1;
             dtgPrincipal.CellEndEdit += dtgPrincipal_CellEndEdit;
             dtgPrincipal.CellValueChanged += dtgPrincipal_CellValueChanged;
@@ -1051,7 +1087,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1350, 729);
+            ClientSize = new Size(884, 561);
             Controls.Add(splitContainerPrincipal);
             Controls.Add(tabControlPrincipal);
             Controls.Add(toolStripPrincipal);
