@@ -40,6 +40,12 @@ namespace EBS_LAB
             cboAlgorithm.Items.AddRange(text);
         }
 
+        public string TextPrincipal
+        {
+            get { return txtPrincipal.Text; }
+            set { txtPrincipal.Text = value; }
+        }
+
         private void btnRepoEBS_Lab_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo(@"https://github.com/EBS-Security-Systems/EBS-LAB") { UseShellExecute = true });
@@ -297,7 +303,8 @@ namespace EBS_LAB
             switch (engine)
             {
                 case "EBS-RN":
-                    // Implementar encriptação simétrica usando EBS-RN
+                    frmCrypts symmetricCrypt = new frmCrypts(this, txtPrincipal.Text, cboAlgorithm.Text, txtKey.Text, txtIV.Text, Convert.ToInt16(nUpSimetric.Value), true);
+                    symmetricCrypt.ShowDialog();
                     break;
                 case "EBS-CSP":
                     // Implementar encriptação simétrica usando EBS-CSP
@@ -316,7 +323,25 @@ namespace EBS_LAB
 
         private void btnDecrypt_S_Click(object sender, EventArgs e)
         {
-
+            switch (engine)
+            {
+                case "EBS-RN":
+                    frmCrypts symmetricCrypt = new frmCrypts(this, txtPrincipal.Text, cboAlgorithm.Text, txtKey.Text, txtIV.Text, Convert.ToInt16(nUpSimetric.Value), false);
+                    symmetricCrypt.ShowDialog();
+                    break;
+                case "EBS-CSP":
+                    // Implementar decriptação simétrica usando EBS-CSP
+                    break;
+                case "EBS-CLI":
+                    // Implementar decriptação simétrica usando EBS-CLI
+                    break;
+                case "":
+                    MessageBox.Show("Nenhum motor de encriptação selecionado. Por favor, importe um motor.", "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                default:
+                    MessageBox.Show("Motor de encriptação não identificado! Favor abrir uma issue no repositório do Git-Hub, descrevendo como isso ocorreu!", "EBS-LAB", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
         }
         #endregion                    
     }

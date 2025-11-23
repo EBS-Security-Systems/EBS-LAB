@@ -10,6 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EBS-CLI\EBS-CLI.csproj" />
+    <ProjectReference Include="..\EBS-RN\EBS-RN.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="frmCrypts.cs">
       <SubType>Form</SubType>
     </Compile>
