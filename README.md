@@ -24,7 +24,7 @@ _Encryption's Builder Studio_ - Laboratório
 
 <h3 align=center> 
 
-![dallyPrint](/dallyPrint.png)
+![dallyPrint](/src/dallyPrint.png)
   
   📥 Instale versões de teste nos atefatos em **[Actions](https://github.com/EBS-Security-Systems/EBS-LAB/actions)**
 
@@ -42,7 +42,7 @@ A aplicação do **EBS-LAB** diferencia-se do ***[Encryption's Builder Studio](h
 
 Uma nova funcionalidade é que você poderá implementar seu próprio serviço de encriptação na plataforma para testes.
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Technologist.png" alt="Technologist" width="30" height="30" /> Contribua 💻
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Man%20Technologist.png" alt="Man Technologist" width="25" height="25"/> Contribua 💻
 
 Neste projeto de código aberto sua contribuíção é bem vinda! Podemos mesclar seu _Pull-Request_, independente do seu grau de conhecimento na área de tecnologia.
 

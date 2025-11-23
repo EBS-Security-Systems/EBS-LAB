@@ -352,7 +352,7 @@
             tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1342, 116);
+            tabPage1.Size = new Size(876, 116);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Codificações";
             // 
@@ -518,7 +518,7 @@
             tabPage3.Controls.Add(tableLayoutPanel5);
             tabPage3.Location = new Point(4, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1342, 116);
+            tabPage3.Size = new Size(876, 116);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Criptografia Assimétrica";
             // 
@@ -592,7 +592,7 @@
             tableLayoutPanel6.Controls.Add(btnEncryptAssimetric, 0, 1);
             tableLayoutPanel6.Controls.Add(btnGenerateKeyPair, 0, 0);
             tableLayoutPanel6.Dock = DockStyle.Right;
-            tableLayoutPanel6.Location = new Point(1178, 0);
+            tableLayoutPanel6.Location = new Point(712, 0);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 3;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
@@ -747,7 +747,7 @@
             tabPage4.Controls.Add(tableLayoutPanel1);
             tabPage4.Location = new Point(4, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1342, 116);
+            tabPage4.Size = new Size(876, 116);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Hashs";
             // 
@@ -757,7 +757,7 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel7.Controls.Add(button1, 0, 0);
             tableLayoutPanel7.Dock = DockStyle.Right;
-            tableLayoutPanel7.Location = new Point(1199, 0);
+            tableLayoutPanel7.Location = new Point(733, 0);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 2;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
